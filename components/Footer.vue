@@ -2,15 +2,25 @@
   <div>
     <footer>
       <h1>GET IN TOUCH</h1>
-      <p>47 Chandos Place, London, WC2N 4HS</p>
-      <MapLocator />
+      <p>{{ address }}</p>
+      <MapLocator location="https://goo.gl/maps/jW6Jz3epDNE3xqkL8" />
     </footer>
-    <SubFooter />
+    <SubFooter
+      copyright="Copyright © 2022"
+      :address="address"
+      phoneNum="020
+    7342 9283"
+      email="info@stereoclub.com"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    address: String
+  }
+}
 </script>
 
 <style lang="scss" scoped>

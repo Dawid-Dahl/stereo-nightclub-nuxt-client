@@ -1,11 +1,13 @@
 <template>
-  <a href="https://goo.gl/maps/jW6Jz3epDNE3xqkL8" target="_blank"
-    >Locate us on map</a
-  >
+  <a :href="location" target="_blank">Locate us on map</a>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    location: String
+  }
+}
 </script>
 
 <style lang="scss" scoped>

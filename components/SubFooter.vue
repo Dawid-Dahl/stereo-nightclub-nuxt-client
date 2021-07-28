@@ -1,14 +1,21 @@
 <template>
   <div>
-    <p>47 Chandos Place, London, WC2N 4HS</p>
-    <p>47 Chandos Place, London, WC2N 4HS</p>
-    <p>47 Chandos Place, London, WC2N 4HS</p>
-    <p>47 Chandos Place, London, WC2N 4HS</p>
+    <p>{{ copyright }}</p>
+    <p>{{ address }}</p>
+    <p>{{ phoneNum }}</p>
+    <p>{{ email }}</p>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    copyright: String,
+    address: String,
+    phoneNum: String,
+    email: String
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -20,7 +27,7 @@ div {
 }
 
 p {
-  margin: 2rem 0;
+  margin: 1.8rem 0;
   padding: 0 1rem 0 1rem;
   color: white;
   font-size: var(--font-size-small);
