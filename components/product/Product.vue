@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <ProductImage src="placeholder" />
+    <ProductImage :src="product.image" />
     <h1>VEGETARIAN PASTA</h1>
     <h6>Tempor inceidentum sed</h6>
   </div>
@@ -16,4 +16,26 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../../assets/scss/mixins/mixins.scss";
+
+.wrapper {
+  @include flexCenter(column);
+  margin: 0;
+}
+
+h1,
+h6 {
+  color: white;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-main);
+}
+
+h6 {
+  font-size: var(--font-size-small);
+  font-weight: 300;
+}
+</style>
