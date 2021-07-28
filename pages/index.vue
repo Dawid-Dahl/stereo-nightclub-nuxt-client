@@ -5,22 +5,22 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapMutations, mapState } from "vuex"
 
 export default {
   data: () => {
     return {
-      inputText: ''
+      inputText: ""
     }
   },
   computed: {
-    ...mapState('todos', ['todos'])
+    ...mapState("todos", ["todos"])
   },
   methods: {
     ...mapMutations({
-      add: 'todos/ADD_TODO',
-      remove: 'todos/REMOVE_TODO',
-      toggle: 'todos/TOGGLE_TODO'
+      add: "todos/ADD_TODO",
+      remove: "todos/REMOVE_TODO",
+      toggle: "todos/TOGGLE_TODO"
     })
   }
 }
