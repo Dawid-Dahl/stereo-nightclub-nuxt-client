@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <WelcomeSubHeader />
+    <ProductGrid />
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default {
     }
   },
   computed: {
-    ...mapState("todos", ["todos"])
+    ...mapState("products", ["products"])
   },
   methods: {
     ...mapMutations({
