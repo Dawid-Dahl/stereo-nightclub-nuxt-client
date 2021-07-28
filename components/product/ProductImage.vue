@@ -13,13 +13,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-}
-
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
+  box-shadow: var(--box-shadow-light);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+img:hover {
+  transform: scale(1.02);
 }
 </style>

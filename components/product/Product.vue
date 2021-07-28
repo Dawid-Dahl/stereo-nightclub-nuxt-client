@@ -32,10 +32,13 @@ h6 {
 
 h1 {
   font-size: var(--font-size-main);
+  margin: 0.4rem 0 0.1rem 0;
 }
 
 h6 {
   font-size: var(--font-size-small);
   font-weight: 300;
+  margin: 0 0 1rem 0;
+  color: var(--text-color-dark);
 }
 </style>

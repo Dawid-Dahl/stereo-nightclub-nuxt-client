@@ -31,6 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
+  max-width: 768px;
   margin: 0 auto;
 
   @media only screen and (max-width: 768px) {
@@ -41,5 +42,12 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5rem;
+
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 480px) {
+    display: block;
+  }
 }
 </style>

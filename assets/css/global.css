@@ -6,7 +6,7 @@
   --main-color-border: #292a2b;
   --main-color-blue: #3f9bbe;
   --main-color-blue-dark: #34809e;
-  --text-color-dark: #6c6f73;
+  --text-color-dark: #797c80;
   --delete-color: #ff7e7e;
   --delete-color-hover: #fa6a6a;
   --border-radius: 2em;
@@ -18,7 +18,7 @@
   --font-size-main: 0.7em;
   --font-size-small: 0.6em;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
