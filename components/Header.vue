@@ -17,12 +17,13 @@ export default {}
 header {
   @include flexCenter(row, center, flex-start);
 
-  background-color: var(--main-color);
-  height: 59px;
+  background-color: var(--main-color-light);
+  height: 55px;
+  border-bottom: var(--main-color-border) solid 1px;
 }
 
 img {
-  height: 80px;
+  height: 75px;
   margin: 0 auto;
 }
 </style>

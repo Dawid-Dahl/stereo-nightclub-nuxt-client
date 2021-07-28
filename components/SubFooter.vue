@@ -38,4 +38,15 @@ p {
 p:last-child {
   border-right: none;
 }
+
+@media only screen and (max-width: 480px) {
+  div {
+    display: block;
+  }
+
+  p {
+    border: none;
+    margin: 1rem 0;
+  }
+}
 </style>

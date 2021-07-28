@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <footer>
       <h1>GET IN TOUCH</h1>
       <p>{{ address }}</p>

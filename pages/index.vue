@@ -1,13 +1,6 @@
 <template>
-  <div>
-    <h1>Hello world!</h1>
-    <h2>TODOS:</h2>
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">{{ todo.content }}</li>
-    </ul>
-    <p>{{ inputText }}</p>
-    <input v-model="inputText" type="text" :placeholder="inputText" />
-    <button @click="add(inputText)">My Button</button>
+  <div class="wrapper">
+    <WelcomeSubHeader />
   </div>
 </template>
 
