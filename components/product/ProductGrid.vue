@@ -31,10 +31,11 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  max-width: 768px;
-  margin: 0 auto;
+  max-width: 730px;
+  margin: 0 auto 3rem auto;
 
   @media only screen and (max-width: 768px) {
+    margin: 0 1rem 3rem 1rem;
   }
 }
 

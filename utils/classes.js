@@ -14,4 +14,8 @@ export class Drink {
     this.price = price
     this.ingredients = ingredients
   }
+
+  toJSON() {
+    return { ...this }
+  }
 }

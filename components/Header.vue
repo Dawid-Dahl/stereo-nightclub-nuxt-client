@@ -12,17 +12,19 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/mixins/mixins.scss';
+@import "../assets/scss/mixins/mixins.scss";
 
 header {
   @include flexCenter(row, center, flex-start);
 
   background-color: var(--main-color-light);
-  height: 55px;
+  height: 57px;
   border-bottom: var(--main-color-border) solid 1px;
 }
 
 img {
+  position: absolute;
+  top: 3px;
   height: 75px;
   margin: 0 auto;
 }

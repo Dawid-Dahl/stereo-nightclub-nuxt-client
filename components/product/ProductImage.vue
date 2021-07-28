@@ -23,6 +23,6 @@ img {
   transition: transform 0.2s;
 }
 img:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 </style>
