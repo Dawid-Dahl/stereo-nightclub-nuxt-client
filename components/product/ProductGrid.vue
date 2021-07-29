@@ -47,18 +47,6 @@ export default {
       products: this.products,
       productsPerPage: 9
     })
-  },
-  mounted: function () {
-    changeElementHTML(
-      ".VuePagination__pagination-item-prev-page:nth-child(1)",
-      "<"
-    )
-    changeElementHTML(
-      ".VuePagination__pagination-item-prev-page:nth-child(2)",
-      "Previous"
-    )
-    changeElementHTML(".VuePagination__pagination-item-next-page", "Next")
-    changeElementHTML(".VuePagination__pagination-item-next-chunk", ">")
   }
 }
 </script>

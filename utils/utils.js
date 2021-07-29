@@ -1,3 +1,6 @@
+export const range = (start, end) =>
+  end <= start ? [start] : [...range(start, end - 1), end]
+
 export const createPagination =
   (itemsPerPage = 10) =>
   (arr = []) => {
@@ -11,11 +14,7 @@ export const createPagination =
     return paginated
   }
 
-export const range = (start, end) =>
-  end <= start ? [start] : [...range(start, end - 1), end]
-
 export const changeElementHTML = (elementClass = "", content = "") => {
-  console.log("LOL")
   const element = document.querySelector(elementClass)
   element.innerHTML = content
 }
