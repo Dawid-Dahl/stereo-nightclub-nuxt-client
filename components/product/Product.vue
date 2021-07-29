@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <ProductImage :src="product.image" />
-    <h1>VEGETARIAN PASTA</h1>
-    <h6>Tempor inceidentum sed</h6>
+    <h1>{{ product.title }}</h1>
+    <h6>{{ product.description }}</h6>
   </div>
 </template>
 

@@ -7,6 +7,7 @@
         :product="product"
       />
     </div>
+    <Pagination :records="1000" />
   </div>
 </template>
 

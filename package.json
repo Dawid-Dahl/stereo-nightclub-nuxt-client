@@ -12,7 +12,8 @@
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-pagination-2": "^3.0.91"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
