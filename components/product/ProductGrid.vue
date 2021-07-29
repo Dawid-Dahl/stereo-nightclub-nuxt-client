@@ -12,6 +12,7 @@
       :records="products.length"
       :per-page="9"
       @paginate="cb"
+      :options="options"
     />
   </div>
 </template>
@@ -19,11 +20,15 @@
 <script>
 import { mapMutations, mapState } from "vuex"
 import { createDrinks } from "../../content/dummyData"
+import { changeElementHTML } from "../../utils/utils"
 
 export default {
   data() {
     return {
-      page: 1
+      page: 1,
+      options: {
+        chunk: 5
+      }
     }
   },
   computed: {
@@ -34,9 +39,7 @@ export default {
       addProducts: "products/ADD_PRODUCTS",
       paginateProducts: "products/PAGINATE_PRODUCTS"
     }),
-    cb: function (page) {
-      console.log(`Page ${page} was selected. Do something about it`)
-    }
+    cb: function (page) {}
   },
   created: function () {
     this.addProducts(createDrinks(100))
@@ -44,6 +47,18 @@ export default {
       products: this.products,
       productsPerPage: 9
     })
+  },
+  mounted: function () {
+    changeElementHTML(
+      ".VuePagination__pagination-item-prev-page:nth-child(1)",
+      "<"
+    )
+    changeElementHTML(
+      ".VuePagination__pagination-item-prev-page:nth-child(2)",
+      "Previous"
+    )
+    changeElementHTML(".VuePagination__pagination-item-next-page", "Next")
+    changeElementHTML(".VuePagination__pagination-item-next-chunk", ">")
   }
 }
 </script>
