@@ -2,12 +2,17 @@
   <div class="wrapper">
     <div class="grid">
       <Product
-        v-for="product in products"
+        v-for="product in paginatedProducts[page - 1]"
         :key="product.id"
         :product="product"
       />
     </div>
-    <Pagination :records="1000" />
+    <pagination
+      v-model="page"
+      :records="products.length"
+      :per-page="9"
+      @paginate="cb"
+    />
   </div>
 </template>
 
@@ -16,16 +21,29 @@ import { mapMutations, mapState } from "vuex"
 import { createDrinks } from "../../content/dummyData"
 
 export default {
+  data() {
+    return {
+      page: 1
+    }
+  },
   computed: {
-    ...mapState("products", ["products"])
+    ...mapState("products", ["products", "paginatedProducts"])
   },
   methods: {
     ...mapMutations({
-      addProducts: "products/ADD_PRODUCTS"
-    })
+      addProducts: "products/ADD_PRODUCTS",
+      paginateProducts: "products/PAGINATE_PRODUCTS"
+    }),
+    cb: function (page) {
+      console.log(`Page ${page} was selected. Do something about it`)
+    }
   },
   created: function () {
-    this.addProducts(createDrinks(9))
+    this.addProducts(createDrinks(100))
+    this.paginateProducts({
+      products: this.products,
+      productsPerPage: 9
+    })
   }
 }
 </script>

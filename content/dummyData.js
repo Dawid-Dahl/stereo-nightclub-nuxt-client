@@ -1,17 +1,15 @@
-import { Drink } from "../utils/classes.js"
+import { Drink } from "../utils/classes"
+import { range } from "../utils/utils"
 import { images } from "./images"
-
-const range = (start, end) =>
-  end <= start ? [start] : [...range(start, end - 1), end]
 
 export const createDrinks = (number = 12) => {
   return range(1, number).map(
-    (x, i) =>
+    x =>
       new Drink(
-        Math.floor(Math.random() * 1000000),
-        `Test Drink ${i}`,
+        Math.floor(Math.random() * 10000000),
+        `Test Drink ${x}`,
         "Tempor incident sed",
-        images[i % images.length],
+        images[x % images.length],
         Math.floor(Math.random() * 1000)
       )
   )
