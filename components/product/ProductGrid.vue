@@ -42,7 +42,7 @@ export default {
     cb: function (page) {}
   },
   created: function () {
-    this.addProducts(createDrinks(20))
+    this.addProducts(createDrinks(100))
     this.paginateProducts({
       products: this.products,
       productsPerPage: 9

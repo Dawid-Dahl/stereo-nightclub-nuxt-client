@@ -3,11 +3,11 @@
     <div class="inner-wrapper">
       <h1>WELCOME TO STEREO CLUB</h1>
       <h6>
-        WE CREATE dolor sit amet consectetur adipisicing elit. Aperiam,
-        consequuntur corrupti deleniti laborum dolorem et similique veritatis
-        est animi! Culpa in odio adipisci praesentium nulla neque distinctio
-        laborum natus voluptas voluptatem ad voluptates facilis quae nobis ex
-        minus perferendis earum, similique iste!
+        <span>WE CREATE</span> dolor sit amet consectetur adipisicing elit.
+        Aperiam, consequuntur corrupti deleniti laborum dolorem et similique
+        veritatis est animi! Culpa in odio adipisci praesentium nulla neque
+        distinctio laborum natus voluptas voluptatem ad voluptates facilis quae
+        nobis ex minutiae.
       </h6>
     </div>
   </div>
@@ -33,6 +33,10 @@ export default {
   max-width: 30rem;
 }
 
+span {
+  font-weight: bold;
+}
+
 h1,
 h6 {
   color: white;
@@ -48,7 +52,7 @@ h1 {
 h6 {
   font-size: var(--font-size-small);
   margin: 0 0 1rem 0;
-  padding: 0 4rem;
+  padding: 0 5rem;
   font-weight: 300;
 }
 </style>
