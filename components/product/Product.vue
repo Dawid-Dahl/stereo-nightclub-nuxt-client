@@ -2,6 +2,7 @@
   <div class="wrapper">
     <ProductImage
       :src="product.image"
+      :id="product.id"
       :price="product.price"
       :ingredients="product.ingredients"
     />

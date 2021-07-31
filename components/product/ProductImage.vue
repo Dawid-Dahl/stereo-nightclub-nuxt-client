@@ -1,11 +1,13 @@
 <template>
   <div @mouseover="hover = true" @mouseleave="hover = false" class="wrapper">
-    <ProductImageInfo
-      :hover="hover"
-      :price="price"
-      :ingredients="ingredients"
-    />
-    <img :src="src" alt="product image" />
+    <NuxtLink :to="dynamicUrl">
+      <ProductImageInfo
+        :hover="hover"
+        :price="price"
+        :ingredients="ingredients"
+      />
+      <img :src="src" alt="product image" />
+    </NuxtLink>
   </div>
 </template>
 
@@ -14,6 +16,10 @@ export default {
   props: {
     src: {
       type: String,
+      required: true
+    },
+    id: {
+      type: Number,
       required: true
     },
     price: {
@@ -30,6 +36,11 @@ export default {
   data() {
     return {
       hover: false
+    }
+  },
+  computed: {
+    dynamicUrl: function () {
+      return `product/${this.id}`
     }
   }
 }

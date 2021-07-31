@@ -1,9 +1,11 @@
 <template>
   <header>
-    <img
-      src="https://storage.googleapis.com/stereo-nightclub-bucket/resurser/logo-club.png"
-      alt="logo"
-    />
+    <NuxtLink to="/">
+      <img
+        src="https://storage.googleapis.com/stereo-nightclub-bucket/resurser/logo-club.png"
+        alt="logo"
+      />
+    </NuxtLink>
   </header>
 </template>
 
@@ -22,10 +24,13 @@ header {
   border-bottom: var(--main-color-border) solid 1px;
 }
 
-img {
+a {
   position: absolute;
+  margin: 0 auto;
+}
+
+img {
   top: 3px;
   height: 75px;
-  margin: 0 auto;
 }
 </style>
