@@ -32,6 +32,7 @@ h1,
 h6 {
   color: white;
   margin: 0;
+  cursor: pointer;
 }
 
 h1 {

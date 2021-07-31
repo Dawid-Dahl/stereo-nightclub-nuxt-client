@@ -39,12 +39,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
+
 .wrapper {
+  @include flexCenter(column, flex-end, flex-start);
+
   position: absolute;
+  padding: 0;
+  height: 100%;
   z-index: 1;
-  padding: 1rem;
   opacity: 1;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 h3,
@@ -53,10 +59,24 @@ p {
 }
 
 h3 {
+  margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
+  padding: 0 1.1rem;
 }
 
 p {
   font-size: 0.7rem;
+  margin: 0;
+  padding: 0.2rem 0.5rem 1.5rem 1.1rem;
+}
+
+@media only screen and (max-width: 480px) {
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
 </style>
