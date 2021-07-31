@@ -23,7 +23,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/global.css", "@/assets/scss/mixins/mixins.scss"],
+  css: [
+    "@/assets/scss/base/_global.scss",
+    "@/assets/scss/abstracts/_mixins.scss",
+    "@/assets/scss/abstracts/_variables.scss",
+    "@/assets/scss/components/_pagination.scss"
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["~/plugins/vue-pagination-2.js"],

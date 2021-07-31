@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/mixins/mixins.scss';
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
 
 footer {
   @include flexCenter(column);

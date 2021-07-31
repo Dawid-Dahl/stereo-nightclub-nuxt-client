@@ -1,5 +1,6 @@
 <template>
-  <div class="wrapper">
+  <div @mouseover="hover = true" @mouseleave="hover = false" class="wrapper">
+    <h3 v-if="hover">{{ ingredients }}</h3>
     <img :src="src" alt="product image" />
   </div>
 </template>
@@ -7,7 +8,25 @@
 <script>
 export default {
   props: {
-    src: String
+    src: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    },
+    ingredients: {
+      type: Array,
+      required: true,
+      validator: ingredients =>
+        ingredients.every(ingredient => typeof ingredient === "string")
+    }
+  },
+  data() {
+    return {
+      hover: false
+    }
   }
 }
 </script>

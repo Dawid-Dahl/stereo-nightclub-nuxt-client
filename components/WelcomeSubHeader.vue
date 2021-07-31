@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/mixins/mixins.scss';
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
 
 .wrapper {
   @include flexCenter(column);

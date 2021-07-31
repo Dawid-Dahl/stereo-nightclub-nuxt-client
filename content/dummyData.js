@@ -10,7 +10,8 @@ export const createDrinks = (number = 12) => {
         `Test Drink ${x}`,
         "Tempor incident sed",
         images[x % images.length],
-        Math.floor(Math.random() * 1000)
+        Math.floor(Math.random() * 1000),
+        ["flour", "bleached wheat", "soy oil", "yeast"]
       )
   )
 }

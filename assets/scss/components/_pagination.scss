@@ -1,0 +1,50 @@
+.VuePagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .VuePagination__pagination {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .VuePagination__pagination-item {
+    list-style: none;
+    background-color: var(--main-color-light);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.3rem;
+    padding: 0 6px;
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+  
+  .VuePagination__pagination-item:hover {
+    background-color: var(--text-color-dark);
+  }
+  
+  .VuePagination__count {
+    display: none;
+  }
+  
+  .VuePagination__pagination-item-prev-page:nth-child(1) {
+    padding: 0 5px 0 10px;
+  }
+  
+  .VuePagination__pagination-item-next-chunk {
+    padding: 0 10px 0 5px;
+  }
+  
+  .VuePagination__pagination-item.active {
+    background-color: var(--text-color-dark);
+  }

@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper">
-    <ProductImage :src="product.image" />
+    <ProductImage
+      :src="product.image"
+      :price="product.price"
+      :ingredients="product.ingredients"
+    />
     <h1>{{ product.title }}</h1>
     <h6>{{ product.description }}</h6>
   </div>
@@ -17,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/mixins/mixins.scss";
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
 
 .wrapper {
   @include flexCenter(column);
