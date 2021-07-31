@@ -1,6 +1,10 @@
 <template>
   <div @mouseover="hover = true" @mouseleave="hover = false" class="wrapper">
-    <h3 v-if="hover">{{ ingredients }}</h3>
+    <ProductImageInfo
+      :hover="hover"
+      :price="price"
+      :ingredients="ingredients"
+    />
     <img :src="src" alt="product image" />
   </div>
 </template>
@@ -32,6 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  position: relative;
+}
+
 img {
   height: 100%;
   width: 100%;
@@ -41,6 +49,7 @@ img {
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 img:hover {
   transform: scale(1.01);
 }

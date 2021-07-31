@@ -11,7 +11,16 @@ export const createDrinks = (number = 12) => {
         "Tempor incident sed",
         images[x % images.length],
         Math.floor(Math.random() * 1000),
-        ["flour", "bleached wheat", "soy oil", "yeast"]
+        [
+          "flour",
+          "bleached wheat",
+          "soy oil",
+          "yeast",
+          "flour",
+          "bleached wheat",
+          "soy oil",
+          "yeast"
+        ]
       )
   )
 }
