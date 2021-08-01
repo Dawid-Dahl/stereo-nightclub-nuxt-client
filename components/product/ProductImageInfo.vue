@@ -25,11 +25,13 @@ export default {
 	},
 	computed: {
 		stringifiedIngredients: function () {
-			return this.ingredients.reduce(
-				(acc, cur, i, arr) =>
-					i !== arr.length - 1 ? acc + cur + ", " : acc + cur,
-				""
-			)
+			return this.ingredients.length
+				? this.ingredients.reduce(
+						(acc, cur, i, arr) =>
+							i !== arr.length - 1 ? acc + cur + ", " : acc + cur,
+						""
+				  )
+				: ""
 		},
 		opacityStyle: function () {
 			return this.hover ? "opacity: 1" : "opacity: 0"

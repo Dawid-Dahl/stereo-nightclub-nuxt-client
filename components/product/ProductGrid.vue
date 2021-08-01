@@ -3,56 +3,76 @@
 		<div class="grid">
 			<Product
 				v-for="product in paginatedProducts[page - 1]"
-				:key="product.id"
-				:product="product"
+				:key="product.ID"
+				:product="constructProduct(product)"
 			/>
 		</div>
-		<pagination
+		<!-- <pagination
 			v-model="page"
 			:records="products.length"
 			:per-page="9"
-			@paginate="cb"
 			:options="options"
-		/>
+		/> -->
 	</div>
 </template>
 
 <script>
 import {mapMutations, mapState} from "vuex"
-import {createDrinks} from "../../content/dummyData"
-import readDrink from "@/apollo/queries/readDrinks"
+import {Drink} from "@/utils/classes"
+import readDrinks from "@/apollo/queries/readDrinks"
 
 export default {
 	data() {
 		return {
+			/* paginatedProducts: [], */
 			page: 1,
 			options: {
 				chunk: 5
 			}
 		}
 	},
-	apollo: {
-		readDrinks: {
-			prefetch: true,
-			query: readDrink
+	methods: {
+		...mapMutations({
+			paginateProducts: "products/PAGINATE_PRODUCTS"
+		}),
+		constructProduct({
+			ID,
+			Title,
+			Description,
+			Image,
+			Price,
+			Ingredients,
+			Created
+		}) {
+			return new Drink(
+				parseFloat(ID),
+				Title,
+				Description,
+				Image,
+				Price,
+				Ingredients.edges,
+				Created
+			)
 		}
 	},
 	computed: {
-		...mapState("products", ["products", "paginatedProducts"])
+		...mapState("products", ["paginatedProducts"])
 	},
-	methods: {
-		...mapMutations({
-			addProducts: "products/ADD_PRODUCTS",
-			paginateProducts: "products/PAGINATE_PRODUCTS"
-		}),
-		cb: function (page) {}
-	},
-	created: function () {
-		this.addProducts(createDrinks(100))
+	async fetch() {
+		const client = this.$nuxt.context.app.apolloProvider.defaultClient
+
+		const res = await client.query({
+			query: readDrinks
+		})
+
+		const {readDrinks: drinks} = res.data
+
 		this.paginateProducts({
-			products: this.products,
+			products: drinks,
 			productsPerPage: 9
 		})
+
+		/* this.paginatedProducts = createPagination(9)(drinks) */
 	}
 }
 </script>

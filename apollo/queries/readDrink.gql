@@ -3,6 +3,7 @@ query {
 		ID: $id 
 		Title
 		Description
+		Price
 		Image
 		Created
 		Ingredients {
