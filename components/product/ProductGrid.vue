@@ -20,6 +20,7 @@
 <script>
 import {mapMutations, mapState} from "vuex"
 import {createDrinks} from "../../content/dummyData"
+import readDrink from "@/GraphQL/queries/readDrinks"
 
 export default {
 	data() {
@@ -28,6 +29,12 @@ export default {
 			options: {
 				chunk: 5
 			}
+		}
+	},
+	apollo: {
+		readDrinks: {
+			prefetch: true,
+			query: readDrink
 		}
 	},
 	computed: {

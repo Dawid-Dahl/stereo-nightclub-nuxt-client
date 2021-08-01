@@ -1,6 +1,6 @@
 query {
-	readDrinks {
-		ID
+	readDrink($id: Number) {
+		ID: $id 
 		Title
 		Description
 		Image
