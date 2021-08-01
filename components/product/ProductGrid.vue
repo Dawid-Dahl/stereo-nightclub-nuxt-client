@@ -32,8 +32,8 @@ export default {
 	},
 	methods: {
 		...mapMutations({
-			paginateProducts: "products/PAGINATE_PRODUCTS",
-			addProducts: "products/ADD_PRODUCTS"
+			PAGINATE_PRODUCTS: "products/PAGINATE_PRODUCTS",
+			ADD_PRODUCTS: "products/ADD_PRODUCTS"
 		}),
 		constructProduct({
 			ID,
@@ -61,15 +61,15 @@ export default {
 	async fetch() {
 		const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
-		const res = await client.query({
+		const {data} = await client.query({
 			query: readDrinks
 		})
 
-		const {readDrinks: drinks} = res.data
+		const {readDrinks: drinks} = data
 
-		this.addProducts(drinks)
+		this.ADD_PRODUCTS(drinks)
 
-		this.paginateProducts({
+		this.PAGINATE_PRODUCTS({
 			products: drinks,
 			productsPerPage: 9
 		})
