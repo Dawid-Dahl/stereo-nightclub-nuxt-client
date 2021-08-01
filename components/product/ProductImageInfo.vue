@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
+@use "@/assets/scss/abstracts/_variables.scss" as *;
 
 .wrapper {
 	@include flexCenter(column, flex-end, flex-start);
@@ -70,7 +71,7 @@ p {
 	padding: 0.2rem 0.5rem 1.5rem 1.1rem;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $mobile-width-small) {
 	h3 {
 		font-size: 1rem;
 	}

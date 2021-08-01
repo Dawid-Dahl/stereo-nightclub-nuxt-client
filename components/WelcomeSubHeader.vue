@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
+@use "@/assets/scss/abstracts/_variables.scss" as *;
 
 .wrapper {
 	@include flexCenter(column);
@@ -54,5 +55,11 @@ h6 {
 	margin: 0 0 1rem 0;
 	padding: 0 5rem;
 	font-weight: 300;
+
+	@media only screen and (max-width: $mobile-width-small) {
+		font-size: calc(var(--font-size-small) + 20%);
+		margin: 0 0 2rem 0;
+		padding: 0 3rem;
+	}
 }
 </style>

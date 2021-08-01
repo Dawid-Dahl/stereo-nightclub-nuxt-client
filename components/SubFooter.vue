@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
+@use "@/assets/scss/abstracts/_variables.scss" as *;
 
 div {
 	@include flexCenter();
@@ -39,7 +40,7 @@ p:last-child {
 	border-right: none;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $mobile-width-small) {
 	div {
 		display: block;
 	}

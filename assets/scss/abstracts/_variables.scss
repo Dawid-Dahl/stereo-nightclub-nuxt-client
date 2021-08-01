@@ -1,19 +1,37 @@
+/* CSS Variables */
+
 :root {
-    --main-color: #1e1e20;
-    --main-color-light: #2b2b2b;
-    --main-color-medium: #484848;
-    --main-color-border: #323537;
-    --main-color-blue: #3f9bbe;
-    --main-color-blue-dark: #34809e;
-    --text-color-dark: #797c80;
-    --delete-color: #ff7e7e;
-    --delete-color-hover: #fa6a6a;
-    --border-radius: 2em;
-    --border-radius-card: 1em;
-    --box-shadow: -1px 11px 46px 1px rgb(0 0 0 / 48%);
-    --box-shadow-light: -1px 11px 46px 1px rgb(0 0 0 / 18%);
-    --font-size-large: 3em;
-    --font-size-header: 1em;
-    --font-size-main: 0.7em;
-    --font-size-small: 0.6em;
-  }
+	--main-color: #1e1e20;
+	--main-color-light: #2b2b2b;
+	--main-color-medium: #484848;
+	--main-color-border: #323537;
+	--main-color-blue: #3f9bbe;
+	--main-color-blue-dark: #34809e;
+	--text-color-dark: #797c80;
+	--delete-color: #ff7e7e;
+	--delete-color-hover: #fa6a6a;
+	--border-radius: 2em;
+	--border-radius-card: 1em;
+	--box-shadow: -1px 11px 46px 1px rgb(0 0 0 / 48%);
+	--box-shadow-light: -1px 11px 46px 1px rgb(0 0 0 / 18%);
+	--font-size-large: 3em;
+	--font-size-header: 1em;
+	--font-size-main: 0.7em;
+	--font-size-small: 0.6em;
+
+	--mobile-width-small: 480px;
+	--mobile-width-large: 650px;
+	--tablet-width-small: 700px;
+	--tablet-width-large: 768px;
+	--laptop-width-small: 992px;
+	--laptop-width-large: 1200px;
+}
+
+/* SCSS Variables */
+
+$mobile-width-small: 480px;
+$mobile-width-large: 650px;
+$tablet-width-small: 700px;
+$tablet-width-large: 768px;
+$laptop-width-small: 992px;
+$laptop-width-large: 1200px;

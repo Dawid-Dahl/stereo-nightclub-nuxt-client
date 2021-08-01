@@ -22,6 +22,7 @@ header {
 	background-color: var(--main-color-light);
 	height: 57px;
 	border-bottom: var(--main-color-border) solid 1px;
+	z-index: 10;
 }
 
 a {

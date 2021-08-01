@@ -51,12 +51,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/abstracts/_variables.scss" as *;
+
 .wrapper {
 	max-width: 730px;
 	margin: 0 auto 3rem auto;
 
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: $tablet-width-large) {
 		margin: 0 1rem 3rem 1rem;
+	}
+	@media only screen and (max-width: $mobile-width-small) {
+		margin: 0;
 	}
 }
 
@@ -65,10 +70,10 @@ export default {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 0.5rem;
 
-	@media only screen and (max-width: 700px) {
+	@media only screen and (max-width: $tablet-width-small) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@media only screen and (max-width: 480px) {
+	@media only screen and (max-width: $mobile-width-small) {
 		display: block;
 	}
 }
