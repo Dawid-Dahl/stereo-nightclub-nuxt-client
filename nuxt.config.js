@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -43,20 +45,22 @@ export default {
 	modules: [
 		// https://go.nuxtjs.dev/axios
 		"@nuxtjs/axios",
-		"@nuxtjs/apollo"
+		"@nuxtjs/apollo",
+		"@nuxtjs/dotenv"
 	],
 
 	apollo: {
+		watchLoading: "@/apollo/loadingHandler.js",
+		errorHandler: "@/apollo/errorHandler.js",
 		clientConfigs: {
 			default: {
-				httpEndpoint:
-					"http://localhost:8888/stereo-nightclub-graphql/graphql"
+				httpEndpoint: process.env.BASE_URL
 			}
 		}
 	},
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
-	axios: {},
+	axios: {baseURL: process.env.BASE_URL},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
