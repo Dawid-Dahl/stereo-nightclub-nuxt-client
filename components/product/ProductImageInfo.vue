@@ -1,40 +1,40 @@
 <template>
-  <div :style="opacityStyle" class="wrapper">
-    <h3>{{ `${price} $` }}</h3>
-    <p>{{ stringifiedIngredients }}</p>
-  </div>
+	<div :style="opacityStyle" class="wrapper">
+		<h3>{{ `${price} $` }}</h3>
+		<p>{{ stringifiedIngredients }}</p>
+	</div>
 </template>
 
 <script>
 export default {
-  props: {
-    hover: {
-      type: Boolean,
-      required: true
-    },
-    price: {
-      type: Number,
-      required: true
-    },
-    ingredients: {
-      type: Array,
-      required: true,
-      validator: ingredients =>
-        ingredients.every(ingredient => typeof ingredient === "string")
-    }
-  },
-  computed: {
-    stringifiedIngredients: function () {
-      return this.ingredients.reduce(
-        (acc, cur, i, arr) =>
-          i !== arr.length - 1 ? acc + cur + ", " : acc + cur,
-        ""
-      )
-    },
-    opacityStyle: function () {
-      return this.hover ? "opacity: 1" : "opacity: 0"
-    }
-  }
+	props: {
+		hover: {
+			type: Boolean,
+			required: true
+		},
+		price: {
+			type: Number,
+			required: true
+		},
+		ingredients: {
+			type: Array,
+			required: true,
+			validator: ingredients =>
+				ingredients.every(ingredient => typeof ingredient === "string")
+		}
+	},
+	computed: {
+		stringifiedIngredients: function () {
+			return this.ingredients.reduce(
+				(acc, cur, i, arr) =>
+					i !== arr.length - 1 ? acc + cur + ", " : acc + cur,
+				""
+			)
+		},
+		opacityStyle: function () {
+			return this.hover ? "opacity: 1" : "opacity: 0"
+		}
+	}
 }
 </script>
 
@@ -42,41 +42,41 @@ export default {
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
 
 .wrapper {
-  @include flexCenter(column, flex-end, flex-start);
+	@include flexCenter(column, flex-end, flex-start);
 
-  position: absolute;
-  padding: 0;
-  height: 100%;
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 0.2s;
-  cursor: pointer;
+	position: absolute;
+	padding: 0;
+	height: 100%;
+	z-index: 1;
+	opacity: 1;
+	transition: opacity 0.2s;
+	cursor: pointer;
 }
 
 h3,
 p {
-  color: white;
+	color: white;
 }
 
 h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.9rem;
-  padding: 0 1.1rem;
+	margin: 0 0 0.5rem 0;
+	font-size: 0.9rem;
+	padding: 0 1.1rem;
 }
 
 p {
-  font-size: 0.7rem;
-  margin: 0;
-  padding: 0.2rem 0.5rem 1.5rem 1.1rem;
+	font-size: 0.7rem;
+	margin: 0;
+	padding: 0.2rem 0.5rem 1.5rem 1.1rem;
 }
 
 @media only screen and (max-width: 480px) {
-  h3 {
-    font-size: 1rem;
-  }
+	h3 {
+		font-size: 1rem;
+	}
 
-  p {
-    font-size: 0.9rem;
-  }
+	p {
+		font-size: 0.9rem;
+	}
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper">
-    <ProductPageImage />
-    <ProductPageContent />
-  </div>
+	<div class="wrapper">
+		<ProductPageImage />
+		<ProductPageContent />
+	</div>
 </template>
 
 <script>
@@ -11,6 +11,6 @@ export default {}
 
 <style lang="scss" scoped>
 .wrapper {
-  background-color: red;
+	background-color: red;
 }
 </style>
