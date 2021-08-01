@@ -1,6 +1,7 @@
 import {createPagination} from "../utils/utils"
 
 export const state = () => ({
+	products: [],
 	paginatedProducts: []
 })
 

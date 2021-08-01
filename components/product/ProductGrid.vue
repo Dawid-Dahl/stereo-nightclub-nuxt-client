@@ -7,12 +7,12 @@
 				:product="constructProduct(product)"
 			/>
 		</div>
-		<!-- <pagination
+		<pagination
 			v-model="page"
 			:records="products.length"
 			:per-page="9"
 			:options="options"
-		/> -->
+		/>
 	</div>
 </template>
 
@@ -24,7 +24,6 @@ import readDrinks from "@/apollo/queries/readDrinks"
 export default {
 	data() {
 		return {
-			/* paginatedProducts: [], */
 			page: 1,
 			options: {
 				chunk: 5
@@ -33,7 +32,8 @@ export default {
 	},
 	methods: {
 		...mapMutations({
-			paginateProducts: "products/PAGINATE_PRODUCTS"
+			paginateProducts: "products/PAGINATE_PRODUCTS",
+			addProducts: "products/ADD_PRODUCTS"
 		}),
 		constructProduct({
 			ID,
@@ -56,7 +56,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapState("products", ["paginatedProducts"])
+		...mapState("products", ["products", "paginatedProducts"])
 	},
 	async fetch() {
 		const client = this.$nuxt.context.app.apolloProvider.defaultClient
@@ -67,12 +67,12 @@ export default {
 
 		const {readDrinks: drinks} = res.data
 
+		this.addProducts(drinks)
+
 		this.paginateProducts({
 			products: drinks,
 			productsPerPage: 9
 		})
-
-		/* this.paginatedProducts = createPagination(9)(drinks) */
 	}
 }
 </script>

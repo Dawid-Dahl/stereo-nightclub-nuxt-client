@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div v-if="product" class="wrapper">
 		<ProductPageImage :src="product.image" />
 		<ProductPageContent
 			:title="product.title"
@@ -10,27 +10,27 @@
 </template>
 
 <script>
+import readDrink from "@/apollo/queries/readDrink"
+
 export default {
 	data() {
 		return {
-			product: {
-				id: 1415460,
-				title: "Test Drink 16",
-				description: "Tempor incident sed",
-				image: "https://storage.googleapis.com/stereo-nightclub-bucket/resurser/product-2.jpg",
-				price: 298,
-				ingredients: [
-					"flour",
-					"bleached wheat",
-					"soy oil",
-					"yeast",
-					"flour",
-					"bleached wheat",
-					"soy oil",
-					"yeast"
-				]
-			}
+			product: null
 		}
+	},
+	async fetch() {
+		const client = this.$nuxt.context.app.apolloProvider.defaultClient
+
+		const res = await client.query({
+			query: readDrink,
+			variables: {
+				id: 5
+			}
+		})
+
+		const {readDrink: drink} = res.data
+
+		this.product = drink
 	}
 }
 </script>

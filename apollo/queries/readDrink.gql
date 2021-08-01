@@ -1,6 +1,6 @@
 query {
-	readDrink($id: Number) {
-		ID: $id 
+	readDrink(id: Number) {
+		ID: id
 		Title
 		Description
 		Price
