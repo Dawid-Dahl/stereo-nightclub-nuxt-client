@@ -28,7 +28,7 @@ export default {
 
 footer {
   @include flexCenter(column);
-  background-image: url('https://storage.googleapis.com/stereo-nightclub-bucket/resurser/footer-bg.jpg');
+  background-image: url("https://storage.googleapis.com/stereo-nightclub-bucket/resurser/footer-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

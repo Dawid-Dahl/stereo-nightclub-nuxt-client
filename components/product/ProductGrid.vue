@@ -20,7 +20,6 @@
 <script>
 import { mapMutations, mapState } from "vuex"
 import { createDrinks } from "../../content/dummyData"
-import { changeElementHTML } from "../../utils/utils"
 
 export default {
   data() {

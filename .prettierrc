@@ -1,11 +1,11 @@
 {
-  "semi": false,
-  "singleQuote": false,
-  "trailingComma": "none",
-  "arrowParens": "avoid",
-  "prettier.printWidth": 80,
-  "prettier.tabWidth": 4,
-  "prettier.useTabs": true,
-  "prettier.bracketSpacing": false,
-  "prettier.useEditorConfig": false
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "printWidth": 80,
+    "tabWidth": 4,
+    "useTabs": true,
+    "bracketSpacing": false,
+    "useEditorConfig": false
 }
