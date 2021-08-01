@@ -1,0 +1,17 @@
+query {
+	readDrinks(ID: 5) {
+		ID
+		Title
+		Description
+		Image
+		Created
+		Ingredients {
+			edges {
+				node {
+					Title
+					Price
+				}
+			}
+		}
+	}
+}
