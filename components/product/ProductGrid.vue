@@ -20,7 +20,7 @@
 <script>
 import {mapMutations, mapState} from "vuex"
 import {createDrinks} from "../../content/dummyData"
-import readDrink from "@/GraphQL/queries/readDrinks"
+import readDrink from "@/apollo/queries/readDrinks"
 
 export default {
 	data() {
