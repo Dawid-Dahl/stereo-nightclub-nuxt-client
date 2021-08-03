@@ -6,6 +6,12 @@
 				alt="logo"
 			/>
 		</NuxtLink>
+		<a
+			href="https://stereo-nightclub-graphql.herokuapp.com/admin/drinks/"
+			target="_blank"
+			class="admin-link"
+			>admin</a
+		>
 	</header>
 </template>
 
@@ -23,6 +29,7 @@ header {
 	height: 57px;
 	border-bottom: var(--main-color-border) solid 1px;
 	z-index: 10;
+	position: relative;
 }
 
 a {
@@ -33,5 +40,21 @@ a {
 img {
 	top: 3px;
 	height: 75px;
+}
+
+.admin-link {
+	position: absolute;
+	top: 20px;
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: grey;
+	right: 10px;
+	cursor: pointer;
+	font-weight: 100;
+	transition: color 0.3s;
+}
+
+.admin-link:hover {
+	color: white;
 }
 </style>

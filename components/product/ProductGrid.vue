@@ -61,7 +61,9 @@ export default {
 	async fetch() {
 		const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
-		const {data} = await client.query({
+		console.log("LOL", process.env.BASE_URL)
+
+		/* const {data} = await client.query({
 			query: readDrinks
 		})
 
@@ -72,7 +74,7 @@ export default {
 		this.PAGINATE_PRODUCTS({
 			products: drinks,
 			productsPerPage: 9
-		})
+		}) */
 	}
 }
 </script>
