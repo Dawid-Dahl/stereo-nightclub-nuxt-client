@@ -62,8 +62,6 @@ export default {
 		try {
 			const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
-			console.log(process.env.BASE_URL)
-
 			const {data} = await client.query({
 				query: readDrinks
 			})
@@ -77,7 +75,7 @@ export default {
 				productsPerPage: 9
 			})
 		} catch (error) {
-			console.log(error)
+			console.error(error)
 		}
 	}
 }

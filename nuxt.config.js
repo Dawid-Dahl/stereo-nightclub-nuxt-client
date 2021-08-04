@@ -53,9 +53,7 @@ export default {
 		watchLoading: "@/apollo/loadingHandler.js",
 		errorHandler: "@/apollo/errorHandler.js",
 		clientConfigs: {
-			default: {
-				httpEndpoint: process.env.BASE_URL
-			}
+			default: "@/apollo/client-configs/default.js"
 		}
 	},
 
@@ -66,6 +64,6 @@ export default {
 	build: {},
 
 	router: {
-		middleware: ["stats"]
+		middleware: []
 	}
 }

@@ -1,9 +1,8 @@
-query {
-	readDrink(id: Number) {
-		ID: id
+query readDrink($ID: Int) {
+	readDrink(ID: $ID) {
+		ID
 		Title
 		Description
-		Price
 		Image
 		Created
 		Ingredients {

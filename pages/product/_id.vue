@@ -19,18 +19,24 @@ export default {
 		}
 	},
 	async fetch() {
-		const client = this.$nuxt.context.app.apolloProvider.defaultClient
+		try {
+			const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
-		const res = await client.query({
-			query: readDrink,
-			variables: {
-				id: 5
-			}
-		})
+			const res = await client.query({
+				query: readDrink,
+				variables() {
+					return {
+						ID: this.$route.params.id
+					}
+				}
+			})
 
-		const {readDrink: drink} = res.data
+			const {readDrink: drink} = res.data
 
-		this.product = drink
+			this.product = drink
+		} catch (error) {
+			console.error(error)
+		}
 	}
 }
 </script>
