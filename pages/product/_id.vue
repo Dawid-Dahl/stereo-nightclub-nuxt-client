@@ -17,8 +17,8 @@ export default {
 		return {
 			product: null
 		}
-	}
-	/* async fetch() {
+	},
+	async fetch() {
 		const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
 		const res = await client.query({
@@ -31,7 +31,7 @@ export default {
 		const {readDrink: drink} = res.data
 
 		this.product = drink
-	} */
+	}
 }
 </script>
 

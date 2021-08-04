@@ -59,20 +59,26 @@ export default {
 		...mapState("products", ["products", "paginatedProducts"])
 	},
 	async fetch() {
-		const client = this.$nuxt.context.app.apolloProvider.defaultClient
+		try {
+			const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
-		const {data} = await client.query({
-			query: readDrinks
-		})
+			console.log(process.env.BASE_URL)
 
-		const {readDrinks: drinks} = data
+			const {data} = await client.query({
+				query: readDrinks
+			})
 
-		this.ADD_PRODUCTS(drinks)
+			const {readDrinks: drinks} = data
 
-		this.PAGINATE_PRODUCTS({
-			products: drinks,
-			productsPerPage: 9
-		})
+			this.ADD_PRODUCTS(drinks)
+
+			this.PAGINATE_PRODUCTS({
+				products: drinks,
+				productsPerPage: 9
+			})
+		} catch (error) {
+			console.log(error)
+		}
 	}
 }
 </script>
