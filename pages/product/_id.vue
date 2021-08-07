@@ -29,36 +29,18 @@ export default {
 			query: readDrink,
 			prefetch: true,
 			variables() {
-				return {id: 5}
+				return {id: this.$route.params.id}
 			},
 			update(data) {
-				console.log("THE DATA", data)
-				return null
+				try {
+					const drink = data.readDrink[0]
+					return Drink.fromJSON(drink)
+				} catch (e) {
+					console.error("No product could be found.")
+				}
 			}
 		}
 	}
-	/* async fetch() {
-		try {
-			const client = this.$nuxt.context.app.apolloProvider.defaultClient
-
-			const res = await client.query({
-				query: readDrink,
-				variables: {
-					ID: 5
-				}
-			})
-
-			const drink = res.data.readDrink[0]
-
-			if (drink) {
-				this.product = this.constructProduct(drink)
-			} else {
-				console.error("No drink was found.")
-			}
-		} catch (error) {
-			console.error(error)
-		}
-	} */
 }
 </script>
 
