@@ -1,9 +1,20 @@
 export default function (context) {
-	return {
-		httpEndpoint: process.env.BASE_URL,
-		httpLinkOptions: {
-			headers: {
-				Authorization: "Basic ZGF3aWRkYWhsQGdtYWlsLmNvbTp0ZXN0MTIzNDU="
+	if (process.env.NODE_ENV === "development") {
+		return {
+			httpEndpoint: process.env.BASE_URL_DEV,
+			httpLinkOptions: {
+				headers: {
+					Origin: process.env.ORIGIN_HEADER_DEV
+				}
+			}
+		}
+	} else {
+		return {
+			httpEndpoint: process.env.BASE_URL,
+			httpLinkOptions: {
+				headers: {
+					Origin: ORIGIN_HEADER
+				}
 			}
 		}
 	}
