@@ -1,4 +1,4 @@
-query {
+query readDrinks {
 	readDrinks {
 		ID
 		Title

@@ -50,6 +50,16 @@ export default {
 	],
 
 	apollo: {
+		tokenName: "nuxt-apollo",
+		cookieAttributes: {
+			expires: 7 // (days)
+		},
+		defaultOptions: {
+			$query: {
+				fetchPolicy: "cache-and-network",
+				errorPolicy: "all"
+			}
+		},
 		watchLoading: "@/apollo/loadingHandler.js",
 		errorHandler: "@/apollo/errorHandler.js",
 		clientConfigs: {
@@ -65,5 +75,7 @@ export default {
 
 	router: {
 		middleware: []
-	}
+	},
+
+	serverMiddleware: []
 }

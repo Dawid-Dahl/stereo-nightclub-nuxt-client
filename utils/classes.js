@@ -20,4 +20,24 @@ export class Drink {
 	toJSON() {
 		return {...this}
 	}
+
+	static fromJSON({
+		ID,
+		Title,
+		Description,
+		Image,
+		Price,
+		Ingredients,
+		Created
+	}) {
+		return new Drink(
+			parseFloat(ID),
+			Title,
+			Description,
+			Image,
+			Price,
+			Ingredients.edges,
+			Created
+		)
+	}
 }

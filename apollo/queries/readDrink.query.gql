@@ -1,5 +1,5 @@
-query readDrink($ID: Int) {
-	readDrink(ID: $ID) {
+query readDrink($id: Int) {
+	readDrink(ID: $id) {
 		ID
 		Title
 		Description

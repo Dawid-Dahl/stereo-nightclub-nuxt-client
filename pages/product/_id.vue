@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import readDrink from "@/apollo/queries/readDrink"
+import readDrink from "@/apollo/queries/readDrink.query"
+import {Drink} from "@/utils/classes"
 
 export default {
 	data() {
@@ -18,26 +19,46 @@ export default {
 			product: null
 		}
 	},
-	async fetch() {
+	methods: {
+		constructProduct(product) {
+			return Drink.fromJSON(product)
+		}
+	},
+	apollo: {
+		product: {
+			query: readDrink,
+			prefetch: true,
+			variables() {
+				return {id: 5}
+			},
+			update(data) {
+				console.log("THE DATA", data)
+				return null
+			}
+		}
+	}
+	/* async fetch() {
 		try {
 			const client = this.$nuxt.context.app.apolloProvider.defaultClient
 
 			const res = await client.query({
 				query: readDrink,
-				variables() {
-					return {
-						ID: this.$route.params.id
-					}
+				variables: {
+					ID: 5
 				}
 			})
 
-			const {readDrink: drink} = res.data
+			const drink = res.data.readDrink[0]
 
-			this.product = drink
+			if (drink) {
+				this.product = this.constructProduct(drink)
+			} else {
+				console.error("No drink was found.")
+			}
 		} catch (error) {
 			console.error(error)
 		}
-	}
+	} */
 }
 </script>
 
