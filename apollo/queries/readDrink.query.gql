@@ -3,6 +3,7 @@ query readDrink($id: Int) {
 		ID
 		Title
 		Description
+		Price
 		Image
 		Created
 		Ingredients {

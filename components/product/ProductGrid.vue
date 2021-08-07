@@ -7,12 +7,12 @@
 				:product="product"
 			/>
 		</div>
-		<!-- <pagination
+		<pagination
 			v-model="page"
 			:records="products.length"
 			:per-page="9"
 			:options="options"
-		/> -->
+		/>
 	</div>
 </template>
 

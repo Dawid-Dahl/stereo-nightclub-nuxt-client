@@ -13,7 +13,7 @@ export default function (context) {
 			httpEndpoint: process.env.BASE_URL,
 			httpLinkOptions: {
 				headers: {
-					Origin: ORIGIN_HEADER
+					Origin: process.env.ORIGIN_HEADER
 				}
 			}
 		}

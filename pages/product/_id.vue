@@ -14,16 +14,6 @@ import readDrink from "@/apollo/queries/readDrink.query"
 import {Drink} from "@/utils/classes"
 
 export default {
-	data() {
-		return {
-			product: null
-		}
-	},
-	methods: {
-		constructProduct(product) {
-			return Drink.fromJSON(product)
-		}
-	},
 	apollo: {
 		product: {
 			query: readDrink,
