@@ -41,3 +41,23 @@ export class Drink {
 		)
 	}
 }
+
+export class Ingredient {
+	constructor(
+		id = Math.floor(Math.random() * 1000000),
+		title = "",
+		price = 0
+	) {
+		this.id = id
+		this.title = title
+		this.price = price
+	}
+
+	toJSON() {
+		return {...this}
+	}
+
+	static fromJSON({node: {ID, Title, Price}}) {
+		return new Ingredient(parseFloat(ID), Title, Price)
+	}
+}

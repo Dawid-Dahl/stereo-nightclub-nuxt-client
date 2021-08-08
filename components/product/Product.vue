@@ -4,7 +4,7 @@
 			:src="product.image"
 			:id="product.id"
 			:price="product.price"
-			:ingredients="product.ingredients"
+			:ingredients="ingredientsFromJSON"
 		/>
 		<NuxtLink :to="dynamicUrl"
 			><h1>{{ product.title }}</h1></NuxtLink
@@ -17,7 +17,7 @@
 
 <script>
 import {createSnippet} from "~/utils/utils"
-import {Drink} from "../../utils/classes"
+import {Drink, Ingredient} from "../../utils/classes"
 
 export default {
 	props: {
@@ -27,8 +27,13 @@ export default {
 		productDescriptionSnippet() {
 			return createSnippet(this.product.description)
 		},
-		dynamicUrl: function () {
+		dynamicUrl() {
 			return `product/${this.id}`
+		},
+		ingredientsFromJSON() {
+			return this.product.ingredients.map(ingredient =>
+				Ingredient.fromJSON(ingredient)
+			)
 		}
 	}
 }

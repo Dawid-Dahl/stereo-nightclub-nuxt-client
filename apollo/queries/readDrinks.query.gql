@@ -9,6 +9,7 @@ query readDrinks {
 		Ingredients {
 			edges {
 				node {
+					ID
 					Title
 					Price
 				}

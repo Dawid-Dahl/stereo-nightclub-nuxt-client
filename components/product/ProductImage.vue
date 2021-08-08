@@ -28,9 +28,7 @@ export default {
 		},
 		ingredients: {
 			type: Array,
-			required: true,
-			validator: ingredients =>
-				ingredients.every(ingredient => typeof ingredient === "string")
+			required: true
 		}
 	},
 	data() {

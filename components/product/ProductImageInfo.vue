@@ -18,17 +18,18 @@ export default {
 		},
 		ingredients: {
 			type: Array,
-			required: true,
-			validator: ingredients =>
-				ingredients.every(ingredient => typeof ingredient === "string")
+			required: true
 		}
 	},
 	computed: {
 		stringifiedIngredients: function () {
+			//console.log(this.ingredients)
 			return this.ingredients.length
 				? this.ingredients.reduce(
 						(acc, cur, i, arr) =>
-							i !== arr.length - 1 ? acc + cur + ", " : acc + cur,
+							i !== arr.length - 1
+								? acc + cur.title + ", "
+								: acc + cur.title,
 						""
 				  )
 				: ""
@@ -62,7 +63,7 @@ p {
 }
 
 h3 {
-	margin: 0 0 0.5rem 0;
+	margin: 0;
 	font-size: 0.9rem;
 	padding: 0 1.1rem;
 }
@@ -70,7 +71,7 @@ h3 {
 p {
 	font-size: 0.7rem;
 	margin: 0;
-	padding: 0.2rem 0.5rem 1.5rem 1.1rem;
+	padding: 0 0.5rem 1.5rem 1.1rem;
 }
 
 @media only screen and (max-width: $mobile-width-small) {
