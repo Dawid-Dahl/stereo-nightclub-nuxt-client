@@ -18,3 +18,11 @@ export const changeElementHTML = (elementClass = "", content = "") => {
 	const element = document.querySelector(elementClass)
 	element.innerHTML = content
 }
+
+export const createSnippet = (str = "", snippetWordOffset = 10) => {
+	const words = str.split(" ")
+
+	return words.length < snippetWordOffset
+		? str
+		: `${words.slice(0, 5).join(" ")} ...`
+}

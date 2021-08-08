@@ -6,17 +6,30 @@
 			:price="product.price"
 			:ingredients="product.ingredients"
 		/>
-		<h1>{{ product.title }}</h1>
-		<h6>{{ product.description }}</h6>
+		<NuxtLink :to="dynamicUrl"
+			><h1>{{ product.title }}</h1></NuxtLink
+		>
+		<NuxtLink :to="dynamicUrl"
+			><h6>{{ productDescriptionSnippet }}</h6></NuxtLink
+		>
 	</div>
 </template>
 
 <script>
+import {createSnippet} from "~/utils/utils"
 import {Drink} from "../../utils/classes"
 
 export default {
 	props: {
 		product: Drink
+	},
+	computed: {
+		productDescriptionSnippet() {
+			return createSnippet(this.product.description)
+		},
+		dynamicUrl: function () {
+			return `product/${this.id}`
+		}
 	}
 }
 </script>
@@ -28,6 +41,10 @@ export default {
 .wrapper {
 	@include flexCenter(column);
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
 }
 
 h1,
