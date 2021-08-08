@@ -56,9 +56,12 @@ h6 {
 	padding: 0 5rem;
 	font-weight: 300;
 
+	@media only screen and (max-width: $mobile-width-large) {
+		margin: 0 0 3rem 0;
+	}
+
 	@media only screen and (max-width: $mobile-width-small) {
 		font-size: calc(var(--font-size-small) + 20%);
-		margin: 0 0 2rem 0;
 		padding: 0 3rem;
 	}
 }

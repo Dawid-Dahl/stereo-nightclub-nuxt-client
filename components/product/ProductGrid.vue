@@ -1,5 +1,9 @@
 <template>
 	<div class="wrapper">
+		<SortingDropDown
+			@UPDATE_SORTING_ORDER="updateSortingOrder"
+			:sortingOrder="sortingOrder"
+		/>
 		<div class="grid">
 			<Product
 				v-for="product in paginatedProducts[page - 1]"
@@ -24,6 +28,7 @@ import readDrinks from "@/apollo/queries/readDrinks.query"
 export default {
 	data() {
 		return {
+			sortingOrder: "created",
 			page: 1,
 			options: {
 				chunk: 5
@@ -50,6 +55,10 @@ export default {
 	methods: {
 		constructProduct(product) {
 			return Drink.fromJSON(product)
+		},
+		updateSortingOrder(sortingOrder) {
+			console.log(sortingOrder)
+			this.sortingOrder = sortingOrder
 		}
 	}
 }
@@ -61,6 +70,7 @@ export default {
 .wrapper {
 	max-width: 730px;
 	margin: 0 auto 3rem auto;
+	position: relative;
 
 	@media only screen and (max-width: $tablet-width-large) {
 		margin: 0 1rem 3rem 1rem;

@@ -23,7 +23,6 @@ export default {
 	},
 	computed: {
 		stringifiedIngredients: function () {
-			//console.log(this.ingredients)
 			return this.ingredients.length
 				? this.ingredients.reduce(
 						(acc, cur, i, arr) =>
