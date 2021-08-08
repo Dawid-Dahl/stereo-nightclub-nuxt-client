@@ -9,7 +9,7 @@
 		</div>
 		<pagination
 			v-model="page"
-			:records="products.length"
+			:records="paginationRecords"
 			:per-page="9"
 			:options="options"
 		/>
@@ -42,6 +42,9 @@ export default {
 	computed: {
 		paginatedProducts() {
 			return createPagination(9)(this.products)
+		},
+		paginationRecords() {
+			return this.products ? this.products.length : 0
 		}
 	},
 	methods: {
