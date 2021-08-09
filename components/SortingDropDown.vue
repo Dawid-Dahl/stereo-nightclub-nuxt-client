@@ -93,7 +93,8 @@ export default {
 		transition: background-color 0.3s;
 
 		&:hover {
-			background-color: red;
+			background-color: var(--text-color-dark);
+			color: white;
 		}
 	}
 }

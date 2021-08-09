@@ -47,10 +47,16 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
 	position: relative;
+	height: 100%;
+
+	a {
+		height: 100%;
+	}
 }
 
 img {
 	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	object-position: center;
 	box-shadow: var(--box-shadow-light);

@@ -28,7 +28,7 @@ import readDrinks from "@/apollo/queries/readDrinks.query"
 export default {
 	data() {
 		return {
-			sortingOrder: "created",
+			sortingOrder: "Created",
 			page: 1,
 			options: {
 				chunk: 5
