@@ -1,0 +1,3 @@
+mutation updateSortingOrderMutation($sortBy: String) {
+	updateSortingOrderMutation(sortBy: $sortBy) @client
+}

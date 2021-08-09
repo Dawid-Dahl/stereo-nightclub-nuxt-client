@@ -3,25 +3,43 @@ import readDrinks from "../queries/readDrinks.local.query"
 
 const productMutationResolvers = {
 	Mutation: {
-		addProductMutation: (root, {id, description}, {cache}) => {
+		updateSortingOrderMutation: (root, {sortBy}, {cache}) => {
+			if (!sortBy) {
+				console.log("A sorting method must be supplied.")
+				return
+			}
+
 			const {readDrinks: drinks} = cache.readQuery({query: readDrinks})
 
-			console.log("ARGS", id, description)
+			const copy = [...drinks]
 
-			const myNewDrink = Drink.toJSON(id, "LOL DRINK LOCAL", description)
+			if (sortBy.toLowerCase() === "price") {
+				copy.sort((a, b) => a.Price - b.Price)
 
-			const myNewDrinkWithTypeName = {...myNewDrink, __typename: "drink"}
+				cache.writeQuery({
+					query: readDrinks,
+					data: {
+						readDrinks: copy
+					}
+				})
+			}
 
-			console.log("NEW PRODUCT", myNewDrinkWithTypeName)
+			if (sortBy.toLowerCase() === "created") {
+				console.log(copy)
 
-			cache.writeQuery({
-				query: readDrinks,
-				data: {
-					readDrinks: [...drinks, myNewDrinkWithTypeName]
-				}
-			})
+				copy.sort(
+					(a, b) => Date.parse(b.Created) - Date.parse(a.Created)
+				)
 
-			return id
+				cache.writeQuery({
+					query: readDrinks,
+					data: {
+						readDrinks: copy
+					}
+				})
+			}
+
+			return sortBy
 		}
 	}
 }

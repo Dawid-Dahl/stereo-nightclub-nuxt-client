@@ -25,7 +25,14 @@ export default {
 		sortingOrder: {
 			type: String,
 			validator: sortingOrder =>
-				["Created", "Price"].includes(sortingOrder)
+				[
+					"price",
+					"Price",
+					"PRICE",
+					"created",
+					"Created",
+					"CREATED"
+				].includes(sortingOrder)
 		}
 	},
 	computed: {
