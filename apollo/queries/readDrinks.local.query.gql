@@ -1,0 +1,19 @@
+query readDrinks {
+	readDrinks @client {
+		ID
+		Title
+		Description
+		Price
+		Image
+		Created
+		Ingredients {
+			edges {
+				node {
+					ID
+					Title
+					Price
+				}
+			}
+		}
+	}
+}

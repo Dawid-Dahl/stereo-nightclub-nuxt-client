@@ -24,6 +24,7 @@
 import {Drink} from "@/utils/classes"
 import {createPagination} from "@/utils/utils"
 import readDrinks from "@/apollo/queries/readDrinks.query"
+import addProductMutation from "@/apollo/mutations/addProduct.local.mutation"
 
 export default {
 	data() {
@@ -59,6 +60,19 @@ export default {
 		updateSortingOrder(sortingOrder) {
 			console.log(sortingOrder)
 			this.sortingOrder = sortingOrder
+
+			this.$apollo.mutate({
+				mutation: addProductMutation,
+				variables: {
+					id: 234345345340,
+					description: "I am a new product."
+				},
+				update: (store, data) => {
+					console.log("STORE", store)
+					console.log("DATA", data)
+					console.log("Inside update")
+				}
+			})
 		}
 	}
 }

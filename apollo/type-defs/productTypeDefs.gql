@@ -1,0 +1,8 @@
+type Product {
+	id: ID!
+	description: String
+}
+
+type Mutation {
+	addProductMutation(id: ID!, description: String): ID
+}

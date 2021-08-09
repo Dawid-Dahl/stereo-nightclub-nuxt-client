@@ -17,8 +17,24 @@ export class Drink {
 		this.created = created
 	}
 
-	toJSON() {
-		return {...this}
+	static toJSON(
+		id = Math.floor(Math.random() * 1000000),
+		title = "",
+		description = "",
+		image = "",
+		price = 0,
+		ingredients = [],
+		created = ""
+	) {
+		return {
+			ID: id,
+			Title: title,
+			Description: description,
+			Image: image,
+			Price: price,
+			Ingredients: ingredients,
+			Created: created
+		}
 	}
 
 	static fromJSON({

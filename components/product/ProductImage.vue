@@ -48,10 +48,15 @@ export default {
 .wrapper {
 	position: relative;
 	height: 100%;
+	transition: transform 0.2s;
 
 	a {
 		height: 100%;
 	}
+}
+
+.wrapper:hover {
+	transform: scale(1.01) rotate(1deg);
 }
 
 img {
@@ -61,10 +66,5 @@ img {
 	object-position: center;
 	box-shadow: var(--box-shadow-light);
 	cursor: pointer;
-	transition: transform 0.2s;
-}
-
-img:hover {
-	transform: scale(1.01) rotate(1deg);
 }
 </style>

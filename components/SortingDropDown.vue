@@ -77,9 +77,10 @@ export default {
 	@include flexCenter(column);
 	background-color: white;
 	transition: all 0.3s;
-	margin: 0.5rem 0;
+	margin: 0.2rem 0;
 	border-radius: 5%;
 	overflow: hidden;
+	z-index: 2;
 
 	a {
 		color: black;

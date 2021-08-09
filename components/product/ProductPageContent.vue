@@ -72,5 +72,6 @@ h1 {
 
 p {
 	margin: 1rem 0 0 0;
+	color: var(--text-color-dark);
 }
 </style>

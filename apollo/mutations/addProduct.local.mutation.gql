@@ -1,0 +1,3 @@
+mutation addProductMutation($id: ID!, $description: String) {
+	addProductMutation(id: $id, description: $description) @client
+}

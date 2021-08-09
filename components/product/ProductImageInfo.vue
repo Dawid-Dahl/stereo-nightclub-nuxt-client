@@ -48,12 +48,13 @@ export default {
 	@include flexCenter(column, flex-end, flex-start);
 
 	position: absolute;
+	height: auto;
 	padding: 0;
-	height: 100%;
 	z-index: 1;
 	opacity: 1;
 	transition: opacity 0.2s;
 	cursor: pointer;
+	bottom: 0;
 }
 
 h3,
