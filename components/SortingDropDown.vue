@@ -7,14 +7,17 @@
 		>
 			<div class="dropbtn">Sort By</div>
 			<div :style="hoverStyle" class="dropdown-content">
-				<a @click="updateSortingOrder" href="#">Created</a>
-				<a @click="updateSortingOrder" href="#">Price</a>
+				<a @click="updateLocalSortingOrder" href="#">Created: Latest</a>
+				<a @click="updateLocalSortingOrder" href="#">Created: Oldest</a>
+				<a @click="updateLocalSortingOrder" href="#">Price: Lowest</a>
+				<a @click="updateLocalSortingOrder" href="#">Price: Highest</a>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import {sortingEnum} from "~/utils/enums"
 export default {
 	data() {
 		return {
@@ -25,14 +28,9 @@ export default {
 		sortingOrder: {
 			type: String,
 			validator: sortingOrder =>
-				[
-					"price",
-					"Price",
-					"PRICE",
-					"created",
-					"Created",
-					"CREATED"
-				].includes(sortingOrder)
+				Object.entries(sortingEnum)
+					.map(([k, v]) => v)
+					.includes(sortingOrder)
 		}
 	},
 	computed: {
@@ -41,7 +39,7 @@ export default {
 		}
 	},
 	methods: {
-		updateSortingOrder(e) {
+		updateLocalSortingOrder(e) {
 			this.$emit("UPDATE_SORTING_ORDER", e.srcElement.innerHTML)
 		}
 	}

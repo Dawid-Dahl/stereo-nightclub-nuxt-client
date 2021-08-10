@@ -26,3 +26,9 @@ export const createSnippet = (str = "", snippetWordOffset = 10) => {
 		? str
 		: `${words.slice(0, 5).join(" ")} ...`
 }
+
+export const updateApolloCacheOrder = (sortingEnumType, query, apolloCache) => {
+	if (!sortingEnumType || !query || !apolloCache) {
+		console.error("Function args not passed correctly")
+	}
+}

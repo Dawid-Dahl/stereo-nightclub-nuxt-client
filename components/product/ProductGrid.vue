@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
 		<SortingDropDown
-			@UPDATE_SORTING_ORDER="updateSortingOrder"
+			@UPDATE_SORTING_ORDER="updateLocalSortingOrder"
 			:sortingOrder="sortingOrder"
 		/>
 		<div class="grid">
@@ -25,11 +25,12 @@ import {Drink} from "@/utils/classes"
 import {createPagination} from "@/utils/utils"
 import readDrinks from "@/apollo/queries/readDrinks.query"
 import updateSortingOrderMutation from "@/apollo/mutations/updateSortingOrder.local.mutation"
+import {sortingEnum} from "~/utils/enums"
 
 export default {
 	data() {
 		return {
-			sortingOrder: "Created",
+			sortingOrder: sortingEnum.CREATED_DESC,
 			page: 1,
 			options: {
 				chunk: 5
@@ -57,7 +58,7 @@ export default {
 		constructProduct(product) {
 			return Drink.fromJSON(product)
 		},
-		updateSortingOrder(sortingOrder) {
+		updateLocalSortingOrder(sortingOrder) {
 			this.sortingOrder = sortingOrder
 
 			this.$apollo.mutate({
