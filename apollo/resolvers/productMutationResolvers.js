@@ -21,9 +21,11 @@ const productMutationResolvers = {
 					sortingEnum
 				)
 
-				updateApolloCacheOrder(sortingStrategy, readDrinks, cache)
-
-				return true
+				return updateApolloCacheOrder(
+					sortingStrategy,
+					readDrinks,
+					cache
+				)
 			} catch (e) {
 				console.error(e)
 				return false
