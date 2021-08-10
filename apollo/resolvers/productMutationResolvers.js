@@ -1,45 +1,31 @@
 import readDrinks from "../queries/readDrinks.local.query"
 import {sortingEnum} from "@/utils/enums"
+import {updateApolloCacheOrder} from "~/utils/utils"
+import {ProductSortingStrategy} from "~/utils/classes"
 
 const productMutationResolvers = {
 	Mutation: {
 		updateSortingOrderMutation: (root, {sortingEnumType}, {cache}) => {
-			if (!sortBy) {
-				console.log("A sorting method must be supplied.")
-				return
-			}
+			try {
+				if (!sortingEnumType) {
+					console.error("A sorting type must be supplied.")
+					return false
+				}
 
-			updateCacheOrder(sortingEnumType, readDrinks, cache)
+				console.log(sortingEnumType)
 
-			const {readDrinks: drinks} = cache.readQuery({query: readDrinks})
-
-			const copy = [...drinks]
-
-			if (sortBy.toLowerCase() === "price") {
-				copy.sort((a, b) => a.Price - b.Price)
-
-				cache.writeQuery({
-					query: readDrinks,
-					data: {
-						readDrinks: copy
-					}
-				})
-			}
-
-			if (sortBy.toLowerCase() === "created") {
-				copy.sort(
-					(a, b) => Date.parse(b.Created) - Date.parse(a.Created)
+				const sortingStrategy = ProductSortingStrategy.create(
+					sortingEnumType,
+					sortingEnum
 				)
 
-				cache.writeQuery({
-					query: readDrinks,
-					data: {
-						readDrinks: copy
-					}
-				})
-			}
+				updateApolloCacheOrder(sortingStrategy, readDrinks, cache)
 
-			return sortBy
+				return true
+			} catch (e) {
+				console.error(e)
+				return false
+			}
 		}
 	}
 }

@@ -27,8 +27,34 @@ export const createSnippet = (str = "", snippetWordOffset = 10) => {
 		: `${words.slice(0, 5).join(" ")} ...`
 }
 
-export const updateApolloCacheOrder = (sortingEnumType, query, apolloCache) => {
-	if (!sortingEnumType || !query || !apolloCache) {
-		console.error("Function args not passed correctly")
+export const updateApolloCacheOrder = (sortingStrategy, query, apolloCache) => {
+	try {
+		if (!sortingStrategy || !query || !apolloCache) {
+			console.error("Args not passed correctly")
+			return false
+		}
+
+		const queryName = query?.definitions[0]?.name?.value ?? null
+
+		if (queryName) {
+			const {[queryName]: data} = apolloCache.readQuery({query: query})
+
+			const sortedData = sortingStrategy(data)
+
+			apolloCache.writeQuery({
+				query: query,
+				data: {
+					[queryName]: sortedData
+				}
+			})
+
+			return true
+		} else {
+			console.error("Couldn't find the query name")
+			return false
+		}
+	} catch (e) {
+		console.error(e)
+		return false
 	}
 }

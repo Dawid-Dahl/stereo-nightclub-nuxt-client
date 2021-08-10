@@ -64,7 +64,7 @@ export default {
 			this.$apollo.mutate({
 				mutation: updateSortingOrderMutation,
 				variables: {
-					sortBy: sortingOrder
+					sortingEnumType: this.sortingOrder
 				},
 				update: (store, data) => {
 					console.log("STORE", store)

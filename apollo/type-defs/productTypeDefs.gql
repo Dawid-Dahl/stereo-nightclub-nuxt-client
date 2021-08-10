@@ -5,5 +5,5 @@ type Product {
 
 type Mutation {
 	addProductMutation(id: ID!, description: String): ID
-	updateSortingOrderMutation(sortBy: String): String
+	updateSortingOrderMutation(sortingEnumType: String): Boolean
 }
