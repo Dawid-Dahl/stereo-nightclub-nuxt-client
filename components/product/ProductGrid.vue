@@ -65,11 +65,6 @@ export default {
 				mutation: updateSortingOrderMutation,
 				variables: {
 					sortingEnumType: this.sortingOrder
-				},
-				update: (store, data) => {
-					console.log("STORE", store)
-					console.log("DATA", data)
-					console.log("Inside update")
 				}
 			})
 		}

@@ -7,12 +7,14 @@ const productMutationResolvers = {
 	Mutation: {
 		updateSortingOrderMutation: (root, {sortingEnumType}, {cache}) => {
 			try {
-				if (!sortingEnumType) {
-					console.error("A sorting type must be supplied.")
+				if (
+					!Object.entries(sortingEnum)
+						.map(([k, v]) => v)
+						.includes(sortingEnumType)
+				) {
+					console.error("A valid sorting type must be supplied.")
 					return false
 				}
-
-				console.log(sortingEnumType)
 
 				const sortingStrategy = ProductSortingStrategy.create(
 					sortingEnumType,
