@@ -78,6 +78,11 @@ export default {
 
 	serverMiddleware: [],
 
+	privateRuntimeConfig: {
+		baseUrl: process.env.BASE_URL,
+		originHeader: process.env.ORIGIN_HEADER
+	},
+
 	publicRuntimeConfig: {
 		baseUrl: process.env.BASE_URL,
 		originHeader: process.env.ORIGIN_HEADER
