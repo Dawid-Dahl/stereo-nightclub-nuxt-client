@@ -25,7 +25,7 @@ export default function (context) {
 		}
 	} else {
 		return {
-			httpEndpoint: process.env.BASE_URL,
+			httpEndpoint: process.env.BASE_URL_PROD,
 			httpLinkOptions: {
 				headers: {
 					Origin: process.env.ORIGIN_HEADER
