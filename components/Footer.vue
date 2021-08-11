@@ -31,7 +31,8 @@ footer {
 	background-image: url("https://storage.googleapis.com/stereo-nightclub-bucket/resurser/footer-bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position-y: 20%;
+	background-position-x: 50%;
 	height: 300px;
 }
 
