@@ -32,6 +32,7 @@ export default {
 	},
 	mounted() {
 		console.log("LOOOL", process.env.BASE_URL)
+		console.log("LOOOL2", process.env.NODE_ENV)
 	}
 }
 </script>
