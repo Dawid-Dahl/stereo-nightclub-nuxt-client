@@ -29,6 +29,9 @@ export default {
 				}
 			}
 		}
+	},
+	mounted() {
+		console.log("LOOOL", process.env.BASE_URL)
 	}
 }
 </script>
