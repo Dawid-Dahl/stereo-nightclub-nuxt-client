@@ -76,5 +76,9 @@ export default {
 		middleware: []
 	},
 
-	serverMiddleware: []
+	serverMiddleware: [],
+
+	privateRuntimeConfig: {
+		apiSecret: process.env.API_SECRET
+	}
 }

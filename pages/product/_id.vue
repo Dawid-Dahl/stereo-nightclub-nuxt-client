@@ -31,10 +31,12 @@ export default {
 		}
 	},
 	mounted() {
+		console.log("LOOL0", context.$config.API_SECRET)
 		console.log("LOOOL", process.env.BASE_URL_PROD)
 		console.log("LOOOL1", process.env.ORIGIN_HEADER)
 		console.log("LOOOL2", process.env.NODE_ENV)
 		console.log("LOOOL3", process.env.HOST)
+		console.log("LOOOL4", this.$config.API_SECRET)
 	}
 }
 </script>
