@@ -30,6 +30,18 @@ export default function (context) {
 				headers: {
 					Origin: process.env.ORIGIN_HEADER
 				}
+			},
+			typeDefs: {
+				...productTypeDefs
+			},
+			resolvers: {
+				...productMutationResolvers
+			},
+			onCacheInit: cache => {
+				const data = {
+					connected: false
+				}
+				cache.writeData({data})
 			}
 		}
 	}
