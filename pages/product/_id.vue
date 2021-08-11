@@ -29,10 +29,6 @@ export default {
 				}
 			}
 		}
-	},
-	mounted() {
-		console.log("LOOOL4", this.$config.baseUrl)
-		console.log("LOOOL5", this.$config.originHeader)
 	}
 }
 </script>
