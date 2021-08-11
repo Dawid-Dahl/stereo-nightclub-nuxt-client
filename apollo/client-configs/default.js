@@ -25,10 +25,10 @@ export default function (context) {
 		}
 	} else {
 		return {
-			httpEndpoint: process.env.BASE_URL_PROD,
+			httpEndpoint: context.$config.baseUrl,
 			httpLinkOptions: {
 				headers: {
-					Origin: process.env.ORIGIN_HEADER
+					Origin: context.$config.originHeader
 				}
 			},
 			typeDefs: {
