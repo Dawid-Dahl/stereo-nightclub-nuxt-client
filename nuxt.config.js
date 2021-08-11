@@ -78,12 +78,8 @@ export default {
 
 	serverMiddleware: [],
 
-	env: {
-		apiSecret: process.env.API_SECRET
-	},
-
-	privateRuntimeConfig: {
-		apiSecret: process.env.API_SECRET
+	publicRuntimeConfig: {
+		apiPublic: process.env.API_PUBLIC
 	},
 
 	privateRuntimeConfig: {
