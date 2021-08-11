@@ -32,7 +32,9 @@ export default {
 	},
 	mounted() {
 		console.log("LOOOL", process.env.BASE_URL_PROD)
+		console.log("LOOOL1", process.env.ORIGIN_HEADER)
 		console.log("LOOOL2", process.env.NODE_ENV)
+		console.log("LOOOL3", process.env.HOST)
 	}
 }
 </script>
