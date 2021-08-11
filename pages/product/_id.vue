@@ -17,7 +17,6 @@ export default {
 	apollo: {
 		product: {
 			query: readDrink,
-			prefetch: true,
 			variables() {
 				return {id: this.$route.params.id}
 			},

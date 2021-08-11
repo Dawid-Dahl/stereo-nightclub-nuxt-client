@@ -22,7 +22,7 @@
 
 <script>
 import {Drink} from "@/utils/classes"
-import {createPagination} from "@/utils/utils"
+import {createPagination, getCookie} from "@/utils/utils"
 import readDrinks from "@/apollo/queries/readDrinks.query"
 import updateSortingOrderMutation from "@/apollo/mutations/updateSortingOrder.local.mutation"
 import {sortingEnum} from "~/utils/enums"
@@ -40,7 +40,6 @@ export default {
 	apollo: {
 		products: {
 			query: readDrinks,
-			prefetch: true,
 			update(data) {
 				return data.readDrinks.map(drink => Drink.fromJSON(drink))
 			}
@@ -65,6 +64,11 @@ export default {
 				mutation: updateSortingOrderMutation,
 				variables: {
 					sortingEnumType: this.sortingOrder
+				},
+				context: {
+					headers: {
+						"X-CSRF-TOKEN": getCookie("csrftoken")
+					}
 				}
 			})
 		}
