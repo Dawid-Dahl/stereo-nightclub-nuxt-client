@@ -101,43 +101,20 @@ export class ProductSortingStrategy {
 						[...data].sort((a, b) => a.Price - b.Price)
 				case sortingEnum.CREATED_ASC:
 					return (data = []) =>
-						[...data].sort(
-							(a, b) => (
-								console.log(
-									"DATE PARSE B CREATED: ",
-									Date.parse(b.Created)
-								),
-								console.log(
-									"DATE PARSE A CREATED",
-									Date.parse(a.Created)
-								),
-								dateParserFn
-									? dateParserFn(b.Created) -
-									  dateParserFn(a.Created)
-									: Date.parse(b.Created) -
-									  Date.parse(a.Created)
-							)
+						[...data].sort((a, b) =>
+							dateParserFn
+								? dateParserFn(b.Created) -
+								  dateParserFn(a.Created)
+								: Date.parse(b.Created) - Date.parse(a.Created)
 						)
+
 				case sortingEnum.CREATED_DESC:
 					return (data = []) =>
-						[...data].sort(
-							(a, b) => (
-								console.log(
-									"DATE PARSE B CREATED: ",
-									Date.parse(b.Created)
-								),
-								console.log(
-									"DATE PARSE A CREATED",
-									Date.parse(a.Created)
-								),
-								console.log(dateParserFn),
-								console.log(Boolean(dateParserFn)),
-								dateParserFn
-									? dateParserFn(a.Created) -
-									  dateParserFn(b.Created)
-									: Date.parse(a.Created) -
-									  Date.parse(b.Created)
-							)
+						[...data].sort((a, b) =>
+							dateParserFn
+								? dateParserFn(a.Created) -
+								  dateParserFn(b.Created)
+								: Date.parse(a.Created) - Date.parse(b.Created)
 						)
 
 				default:
