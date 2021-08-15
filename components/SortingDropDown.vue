@@ -9,8 +9,8 @@
 			<div :style="hoverStyle" class="dropdown-content">
 				<a @click="updateLocalSortingOrder" href="#">Created: Latest</a>
 				<a @click="updateLocalSortingOrder" href="#">Created: Oldest</a>
-				<a @click="updateLocalSortingOrder" href="#">Price: Lowest</a>
 				<a @click="updateLocalSortingOrder" href="#">Price: Highest</a>
+				<a @click="updateLocalSortingOrder" href="#">Price: Lowest</a>
 			</div>
 		</div>
 	</div>
@@ -80,11 +80,12 @@ export default {
 
 .dropdown-content {
 	@include flexCenter(column);
+	position: absolute;
+	right: -7px;
 	background-color: white;
 	transition: all 0.3s;
-	margin: 0.2rem 0;
-	border-radius: 5%;
 	overflow: hidden;
+	border-radius: 5%;
 	z-index: 2;
 
 	a {
@@ -94,7 +95,7 @@ export default {
 		text-decoration: none;
 		width: 100%;
 		text-align: center;
-		padding: 0.2rem;
+		padding: 0.5rem;
 
 		transition: background-color 0.3s;
 

@@ -39,14 +39,10 @@ export default {
 
 .wrapper {
 	@include m.flexCenter();
-	height: 50vh;
 	width: 80vw;
 	margin: 4rem auto;
 	overflow: hidden;
-
-	@media only screen and (max-width: $laptop-width-small) {
-		height: 40vh;
-	}
+	width: 100%;
 
 	@media only screen and (max-width: $tablet-width-small) {
 		width: 100%;

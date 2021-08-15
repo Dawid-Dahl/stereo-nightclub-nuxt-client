@@ -42,7 +42,11 @@ export default {
 	@include m.flexCenter(column);
 	width: 100%;
 	height: 100%;
-	padding: 0 0 0 1rem;
+	padding: 0 1rem 0 1rem;
+
+	@media only screen and (min-width: $laptop-width-large) {
+		@include m.flexCenter(column, center, flex-start);
+	}
 }
 
 .wrapper {
@@ -50,7 +54,7 @@ export default {
 
 	@media only screen and (max-width: $mobile-width-large) {
 		@include m.flexCenter(column);
-		margin: 2rem 0;
+		margin: 1.5rem;
 	}
 }
 

@@ -70,7 +70,7 @@ export default {
 	axios: {baseURL: process.env.BASE_URL},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
-	build: {},
+	build: {extractCSS: true},
 
 	router: {
 		middleware: []

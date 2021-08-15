@@ -45,13 +45,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/abstracts/_variables.scss" as *;
+
 .wrapper {
 	position: relative;
 	height: 100%;
 	transition: transform 0.2s;
+	width: 100%;
 
 	a {
 		height: 100%;
+		width: 100%;
 	}
 }
 
@@ -66,5 +70,9 @@ img {
 	object-position: center;
 	box-shadow: var(--box-shadow-light);
 	cursor: pointer;
+
+	@media only screen and (max-width: $tablet-width-small) {
+		height: 350px;
+	}
 }
 </style>

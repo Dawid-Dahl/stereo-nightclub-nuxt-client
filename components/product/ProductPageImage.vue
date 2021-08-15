@@ -24,7 +24,8 @@ export default {
 }
 
 img {
-	height: 100%;
+	height: 400px;
+	max-width: 600px;
 	object-fit: cover;
 	object-position: center;
 }
@@ -32,6 +33,7 @@ img {
 @media only screen and (max-width: $mobile-width-large) {
 	img {
 		width: 100%;
+		min-height: 55vh;
 	}
 }
 </style>
