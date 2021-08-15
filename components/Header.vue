@@ -26,7 +26,7 @@ header {
 	@include flexCenter(row, center, flex-start);
 
 	background-color: var(--main-color-light);
-	height: 57px;
+	height: 55px;
 	border-bottom: var(--main-color-border) solid 1px;
 	z-index: 10;
 	position: relative;

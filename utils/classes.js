@@ -86,7 +86,7 @@ export class ProductSortingStrategy {
 	 * @param {String} sortingEnum The sorting strategy enum.
 	 * @return {function(any[]):any[]} A sorting strategy function.
 	 */
-	static create(sortingEnumType = "", sortingEnum = {}) {
+	static create(sortingEnumType = "", sortingEnum = {}, dateParserFn = null) {
 		if (
 			Object.entries(sortingEnum)
 				.map(([k, v]) => v)
@@ -111,7 +111,11 @@ export class ProductSortingStrategy {
 									"DATE PARSE A CREATED",
 									Date.parse(a.Created)
 								),
-								Date.parse(b.Created) - Date.parse(a.Created)
+								dateParserFn
+									? +dateParserFn(b.Created) -
+									  +dateParserFn(a.Created)
+									: Date.parse(b.Created) -
+									  Date.parse(a.Created)
 							)
 						)
 				case sortingEnum.CREATED_DESC:
@@ -126,7 +130,11 @@ export class ProductSortingStrategy {
 									"DATE PARSE A CREATED",
 									Date.parse(a.Created)
 								),
-								Date.parse(a.Created) - Date.parse(b.Created)
+								dateParserFn
+									? +dateParserFn(a.Created) -
+									  +dateParserFn(b.Created)
+									: Date.parse(a.Created) -
+									  Date.parse(b.Created)
 							)
 						)
 

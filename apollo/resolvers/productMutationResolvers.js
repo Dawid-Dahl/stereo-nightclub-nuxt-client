@@ -1,6 +1,6 @@
 import readDrinks from "../queries/readDrinks.local.query"
 import {sortingEnum} from "@/utils/enums"
-import {updateApolloCacheOrder} from "~/utils/utils"
+import {updateApolloCacheOrder, parseDate} from "~/utils/utils"
 import {ProductSortingStrategy} from "~/utils/classes"
 
 const productMutationResolvers = {
@@ -18,7 +18,8 @@ const productMutationResolvers = {
 
 				const sortingStrategy = ProductSortingStrategy.create(
 					sortingEnumType,
-					sortingEnum
+					sortingEnum,
+					parseDate
 				)
 
 				return updateApolloCacheOrder(
