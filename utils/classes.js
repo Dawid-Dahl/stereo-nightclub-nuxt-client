@@ -112,8 +112,8 @@ export class ProductSortingStrategy {
 									Date.parse(a.Created)
 								),
 								dateParserFn
-									? +dateParserFn(b.Created) -
-									  +dateParserFn(a.Created)
+									? dateParserFn(b.Created) -
+									  dateParserFn(a.Created)
 									: Date.parse(b.Created) -
 									  Date.parse(a.Created)
 							)
@@ -131,8 +131,8 @@ export class ProductSortingStrategy {
 									Date.parse(a.Created)
 								),
 								dateParserFn
-									? +dateParserFn(a.Created) -
-									  +dateParserFn(b.Created)
+									? dateParserFn(a.Created) -
+									  dateParserFn(b.Created)
 									: Date.parse(a.Created) -
 									  Date.parse(b.Created)
 							)

@@ -18,8 +18,7 @@ const productMutationResolvers = {
 
 				const sortingStrategy = ProductSortingStrategy.create(
 					sortingEnumType,
-					sortingEnum,
-					parseDate
+					sortingEnum
 				)
 
 				return updateApolloCacheOrder(
