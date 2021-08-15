@@ -102,15 +102,34 @@ export class ProductSortingStrategy {
 				case sortingEnum.CREATED_ASC:
 					return (data = []) =>
 						[...data].sort(
-							(a, b) =>
+							(a, b) => (
+								console.log(
+									"DATE PARSE B CREATED: ",
+									Date.parse(b.Created)
+								),
+								console.log(
+									"DATE PARSE A CREATED",
+									Date.parse(a.Created)
+								),
 								Date.parse(b.Created) - Date.parse(a.Created)
+							)
 						)
 				case sortingEnum.CREATED_DESC:
 					return (data = []) =>
 						[...data].sort(
-							(a, b) =>
+							(a, b) => (
+								console.log(
+									"DATE PARSE B CREATED: ",
+									Date.parse(b.Created)
+								),
+								console.log(
+									"DATE PARSE A CREATED",
+									Date.parse(a.Created)
+								),
 								Date.parse(a.Created) - Date.parse(b.Created)
+							)
 						)
+
 				default:
 					console.error(
 						"Something went wrong while selecting strategy."
