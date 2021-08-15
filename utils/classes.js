@@ -130,6 +130,8 @@ export class ProductSortingStrategy {
 									"DATE PARSE A CREATED",
 									Date.parse(a.Created)
 								),
+								console.log(dateParserFn),
+								console.log(Boolean(dateParserFn)),
 								dateParserFn
 									? dateParserFn(a.Created) -
 									  dateParserFn(b.Created)
