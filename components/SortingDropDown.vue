@@ -85,7 +85,7 @@ export default {
 	background-color: white;
 	transition: all 0.3s;
 	overflow: hidden;
-	border-radius: 5%;
+	border-radius: 5px;
 	z-index: 2;
 
 	a {
