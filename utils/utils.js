@@ -41,8 +41,6 @@ export const updateApolloCacheOrder = (sortingStrategy, query, apolloCache) => {
 
 			const sortedData = sortingStrategy(data)
 
-			console.log("SORTED DATA: ", sortedData)
-
 			apolloCache.writeQuery({
 				query: query,
 				data: {

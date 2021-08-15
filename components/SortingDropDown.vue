@@ -1,8 +1,10 @@
 <template>
 	<div class="wrapper">
 		<div
-			@mouseover="hover = true"
+			@mouseenter="hover = true"
+			@touchstart="hover = true"
 			@mouseleave="hover = false"
+			@touchend="hover = false"
 			class="dropdown"
 		>
 			<div class="dropbtn">Sort By</div>
