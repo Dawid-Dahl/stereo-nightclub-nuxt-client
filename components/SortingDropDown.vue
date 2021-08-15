@@ -2,9 +2,10 @@
 	<div class="wrapper">
 		<div
 			@mouseenter="hover = true"
-			@touchstart="hover = true"
 			@mouseleave="hover = false"
-			@touchend="hover = false"
+			@focus="handleFocus"
+			@focusout="handleFocusOut"
+			tabindex="0"
 			class="dropdown"
 		>
 			<div class="dropbtn">Sort By</div>
@@ -43,6 +44,12 @@ export default {
 	methods: {
 		updateLocalSortingOrder(e) {
 			this.$emit("UPDATE_SORTING_ORDER", e.srcElement.innerHTML)
+		},
+		handleFocus(e) {
+			console.log("FOCUS")
+		},
+		handleFocusOut(e) {
+			console.log("FOCUS OUT")
 		}
 	}
 }
