@@ -7,10 +7,10 @@
 		>
 			<div class="dropbtn">Sort By</div>
 			<div :style="hoverStyle" class="dropdown-content">
-				<a @click="updateLocalSortingOrder" href="#">Created: Latest</a>
-				<a @click="updateLocalSortingOrder" href="#">Created: Oldest</a>
-				<a @click="updateLocalSortingOrder" href="#">Price: Highest</a>
-				<a @click="updateLocalSortingOrder" href="#">Price: Lowest</a>
+				<a @click="updateLocalSortingOrder">Created: Latest</a>
+				<a @click="updateLocalSortingOrder">Created: Oldest</a>
+				<a @click="updateLocalSortingOrder">Price: Highest</a>
+				<a @click="updateLocalSortingOrder">Price: Lowest</a>
 			</div>
 		</div>
 	</div>

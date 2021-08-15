@@ -60,6 +60,8 @@ export default {
 		updateLocalSortingOrder(sortingOrder) {
 			this.sortingOrder = sortingOrder
 
+			console.log("SORTING ORDER: ", sortingOrder)
+
 			this.$apollo.mutate({
 				mutation: updateSortingOrderMutation,
 				variables: {
