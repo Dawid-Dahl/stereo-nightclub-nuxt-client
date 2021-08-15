@@ -41,7 +41,6 @@ export default {
 	@include m.flexCenter();
 	width: 80vw;
 	margin: 4rem auto;
-	overflow: hidden;
 	width: 100%;
 
 	@media only screen and (max-width: $tablet-width-small) {

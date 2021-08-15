@@ -30,6 +30,22 @@ const productMutationResolvers = {
 				console.error(e)
 				return false
 			}
+		},
+		addProductMutation: (root, {id, description}, {cache}) => {
+			const {readDrinks: drinks} = cache.readQuery({query: readDrinks})
+
+			const myNewDrink = Drink.toJSON(id, "LOL DRINK LOCAL", description)
+
+			const myNewDrinkWithTypeName = {...myNewDrink, __typename: "drink"}
+
+			cache.writeQuery({
+				query: readDrinks,
+				data: {
+					readDrinks: [...drinks, myNewDrinkWithTypeName]
+				}
+			})
+
+			return id
 		}
 	}
 }
