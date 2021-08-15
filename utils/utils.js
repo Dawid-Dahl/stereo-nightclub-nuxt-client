@@ -36,6 +36,9 @@ export const updateApolloCacheOrder = (sortingStrategy, query, apolloCache) => {
 
 		const queryName = query?.definitions[0]?.name?.value ?? null
 
+		console.log("SORTING STRATEGY: ", sortingStrategy)
+		console.log("QUERY NAME: ", queryName)
+
 		if (queryName) {
 			const {[queryName]: data} = apolloCache.readQuery({query: query})
 
