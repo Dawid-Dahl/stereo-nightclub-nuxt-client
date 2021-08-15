@@ -72,7 +72,7 @@ img {
 	cursor: pointer;
 
 	@media only screen and (max-width: $tablet-width-small) {
-		height: 350px;
+		height: 400px;
 	}
 }
 </style>
