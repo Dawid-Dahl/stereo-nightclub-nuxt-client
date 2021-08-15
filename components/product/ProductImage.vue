@@ -65,7 +65,7 @@ export default {
 
 img {
 	width: 100%;
-	height: 100%;
+	height: 267px;
 	object-fit: cover;
 	object-position: center;
 	box-shadow: var(--box-shadow-light);

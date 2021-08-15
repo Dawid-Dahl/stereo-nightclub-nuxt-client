@@ -1,11 +1,9 @@
 <template>
 	<div class="wrapper">
 		<div
+			v-click-outside="closeDropdown"
 			@mouseenter="hover = true"
 			@mouseleave="hover = false"
-			@focus="handleFocus"
-			@focusout="handleFocusOut"
-			tabindex="0"
 			class="dropdown"
 		>
 			<div class="dropbtn">Sort By</div>
@@ -45,11 +43,9 @@ export default {
 		updateLocalSortingOrder(e) {
 			this.$emit("UPDATE_SORTING_ORDER", e.srcElement.innerHTML)
 		},
-		handleFocus(e) {
-			console.log("FOCUS")
-		},
-		handleFocusOut(e) {
-			console.log("FOCUS OUT")
+		closeDropdown(e) {
+			console.log("FIRED")
+			console.log(e)
 		}
 	}
 }
