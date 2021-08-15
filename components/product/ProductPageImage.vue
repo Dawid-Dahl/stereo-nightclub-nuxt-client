@@ -19,7 +19,7 @@ export default {
 @use "@/assets/scss/abstracts/_variables.scss" as *;
 
 .wrapper {
-	margin: 0;
+	margin: 0 1rem;
 	position: relative;
 }
 
