@@ -25,7 +25,7 @@ export default {
 
 img {
 	height: 400px;
-	max-width: 600px;
+	max-width: 500px;
 	object-fit: cover;
 	object-position: center;
 	box-shadow: var(--box-shadow-light);

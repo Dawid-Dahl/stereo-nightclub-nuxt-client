@@ -44,8 +44,7 @@ export default {
 			this.$emit("UPDATE_SORTING_ORDER", e.srcElement.innerHTML)
 		},
 		closeDropdown(e) {
-			console.log("FIRED")
-			console.log(e)
+			this.hover = false
 		}
 	}
 }
