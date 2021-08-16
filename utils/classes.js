@@ -107,7 +107,6 @@ export class ProductSortingStrategy {
 								  dateParserFn(a.Created)
 								: Date.parse(b.Created) - Date.parse(a.Created)
 						)
-
 				case sortingEnum.CREATED_DESC:
 					return (data = []) =>
 						[...data].sort((a, b) =>
@@ -116,7 +115,6 @@ export class ProductSortingStrategy {
 								  dateParserFn(b.Created)
 								: Date.parse(a.Created) - Date.parse(b.Created)
 						)
-
 				default:
 					console.error(
 						"Something went wrong while selecting strategy."
