@@ -59,8 +59,12 @@ export default {
 	position: absolute;
 	margin: 0;
 	z-index: 1;
-	right: 5px;
+	right: -25px;
 	top: -30px;
+
+	@media only screen and (max-width: $laptop-width-small) {
+		right: 5px;
+	}
 
 	@media only screen and (max-width: $mobile-width-small) {
 		margin: 0 1rem 3rem 1rem;
