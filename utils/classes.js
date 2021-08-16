@@ -83,7 +83,7 @@ export class ProductSortingStrategy {
 	 * .create returns a sorting strategy.
 	 * A sorting strategy is a fn that takes data and returns a copy of sorted data.
 	 * @param {String} sortingEnumType The specific sorting strategy type.
-	 * @param {String} sortingEnum The sorting strategy enum.
+	 * @param {Object} sortingEnum The sorting strategy enum.
 	 * @return {function(any[]):any[]} A sorting strategy function.
 	 */
 	static create(sortingEnumType = "", sortingEnum = {}, dateParserFn = null) {
