@@ -35,6 +35,7 @@ img {
 	img {
 		width: 100%;
 		min-height: 55vh;
+		max-width: 100%;
 	}
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div v-if="!this.$apollo.loading" class="wrapper">
 		<SortingDropDown
 			@UPDATE_SORTING_ORDER="updateLocalSortingOrder"
 			:sortingOrder="sortingOrder"
@@ -18,6 +18,7 @@
 			:options="options"
 		/>
 	</div>
+	<div v-else class="spinner-wrapper"><LoadingSpinner /></div>
 </template>
 
 <script>
@@ -31,6 +32,7 @@ export default {
 	data() {
 		return {
 			sortingOrder: sortingEnum.CREATED_DESC,
+			loading: false,
 			page: 1,
 			options: {
 				chunk: 5
@@ -77,6 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
 @use "@/assets/scss/abstracts/_variables.scss" as *;
 
 .wrapper {
@@ -90,6 +93,11 @@ export default {
 	@media only screen and (max-width: $mobile-width-small) {
 		margin: 0;
 	}
+}
+
+.spinner-wrapper {
+	@include flexCenter();
+	margin: 3rem 0;
 }
 
 .grid {

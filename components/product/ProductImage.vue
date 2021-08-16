@@ -64,7 +64,7 @@ export default {
 }
 
 img {
-	width: 100%;
+	width: 250px;
 	height: 260px;
 	object-fit: cover;
 	object-position: center;
@@ -73,6 +73,7 @@ img {
 
 	@media only screen and (max-width: $tablet-width-small) {
 		height: 400px;
+		width: 100%;
 	}
 }
 </style>
