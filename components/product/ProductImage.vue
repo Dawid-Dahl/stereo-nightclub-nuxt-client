@@ -1,5 +1,11 @@
 <template>
-	<div @mouseover="hover = true" @mouseleave="hover = false" class="wrapper">
+	<div
+		@mouseover="hover = true"
+		@mouseleave="hover = false"
+		@touchstart="hover = true"
+		@touchend="hover = false"
+		class="wrapper"
+	>
 		<NuxtLink :to="dynamicUrl">
 			<ProductImageInfo
 				:hover="hover"

@@ -38,7 +38,7 @@ export default {
 @use "@/assets/scss/abstracts/_variables.scss" as *;
 
 .wrapper {
-	@include m.flexCenter();
+	@include m.flexCenter(row, flex-end);
 	width: 80vw;
 	margin: 4rem auto;
 	width: 100%;

@@ -46,6 +46,7 @@ export default {
 
 	@media only screen and (min-width: $laptop-width-large) {
 		@include m.flexCenter(column, center, flex-start);
+		padding: 0 7rem 0 1rem;
 	}
 }
 
