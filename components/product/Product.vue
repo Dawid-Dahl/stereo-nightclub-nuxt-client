@@ -57,11 +57,13 @@ h6 {
 	color: white;
 	margin: 0;
 	cursor: pointer;
+	text-align: center;
 }
 
 h1 {
 	font-size: var(--font-size-main);
 	margin: 0.4rem 0 0.1rem 0;
+	text-transform: uppercase;
 
 	@media only screen and (max-width: $mobile-width-small) {
 		font-size: calc(var(--font-size-main) + 30%);
