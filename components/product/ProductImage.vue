@@ -70,7 +70,7 @@ export default {
 }
 
 img {
-	width: 250px;
+	width: 100%;
 	height: 260px;
 	object-fit: cover;
 	object-position: center;

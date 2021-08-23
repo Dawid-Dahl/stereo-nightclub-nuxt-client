@@ -59,7 +59,7 @@ export default {
 	position: absolute;
 	margin: 0;
 	z-index: 1;
-	right: -25px;
+	right: -10px;
 	top: -30px;
 
 	@media only screen and (max-width: $laptop-width-small) {
